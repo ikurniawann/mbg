@@ -78,7 +78,7 @@ export default function LPJPage() {
       {selectedTab === 'ringkasan' && (
         <div className="space-y-6">
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
               <p className="text-sm text-slate-500">Total Porsi</p>
               <p className="text-4xl font-black text-violet-600 mt-1">
@@ -105,7 +105,7 @@ export default function LPJPage() {
           {/* Keuangan */}
           <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
             <h2 className="font-semibold text-slate-800 mb-4">💰 Ringkasan Keuangan</h2>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="bg-violet-50 rounded-xl p-4 border border-violet-200">
                 <p className="text-sm text-violet-600 font-medium">Bantuan MBG</p>
                 <p className="text-2xl font-black text-violet-700 mt-1">
@@ -133,7 +133,7 @@ export default function LPJPage() {
           {/* Dokumentasi */}
           <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
             <h2 className="font-semibold text-slate-800 mb-4">📸 Dokumentasi</h2>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {lpj.dokumentasi.map((doc, idx) => (
                 <div key={idx} className="bg-gray-50 rounded-xl p-4 border border-gray-200">
                   <div className="flex items-center gap-3 mb-3">
@@ -204,7 +204,7 @@ export default function LPJPage() {
         <div className="space-y-6">
           <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
             <h2 className="font-semibold text-slate-800 mb-4">🥗 Ringkasan Gizi Rata-rata per Porsi</h2>
-            <div className="grid grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               <div className="bg-violet-50 rounded-xl p-5 border border-violet-200 text-center">
                 <p className="text-xs text-violet-600 font-medium mb-3">Karbohidrat</p>
                 <p className="text-4xl font-black text-violet-700">{lpj.ringkasan.rataRataGizi.karbohidrat}g</p>

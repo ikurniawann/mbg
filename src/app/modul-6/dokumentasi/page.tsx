@@ -84,7 +84,7 @@ export default function DokumentasiPage() {
         </div>
 
         {currentDocs?.foto && currentDocs.foto.length > 0 ? (
-          <div className="grid grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {currentDocs.foto.map((foto, idx) => (
               <div key={idx} className="group relative">
                 <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-36 flex items-center justify-center text-sm text-gray-500 hover:border-violet-400 cursor-pointer transition">

@@ -117,7 +117,7 @@ export default function Modul1Dashboard() {
       )}
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-4 gap-4 mb-6">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
           <div className="flex items-center justify-between">
             <div>
@@ -183,7 +183,7 @@ export default function Modul1Dashboard() {
       {/* Lokasi Penyimpanan */}
       <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 mb-6">
         <h2 className="font-semibold text-slate-800 mb-4">Distribusi Lokasi Penyimpanan</h2>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {[
             { label: 'Cold Room', count: stats.coldRoom, color: 'bg-blue-500', icon: '❄️' },
             { label: 'Freezer', count: stats.freezer, color: 'bg-cyan-500', icon: '🧊' },
@@ -204,45 +204,47 @@ export default function Modul1Dashboard() {
       </div>
 
       {/* Quick Actions */}
-      <div className="grid grid-cols-3 gap-6 mb-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
         {/* Recent BAPB */}
-        <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 col-span-2">
+        <div className="lg:col-span-2 bg-white rounded-xl p-6 shadow-sm border border-gray-200">
           <div className="flex items-center justify-between mb-4">
             <h2 className="font-semibold text-slate-800">BAPB Terbaru</h2>
             <Link href="/modul-1/bapb" className="text-sm text-emerald-600 hover:underline">
               Lihat semua →
             </Link>
           </div>
-          <table className="w-full">
-            <thead>
-              <tr className="text-left text-xs text-slate-500 border-b">
-                <th className="pb-2 font-medium">No. BAPB</th>
-                <th className="pb-2 font-medium">Tanggal</th>
-                <th className="pb-2 font-medium">Pemasok</th>
-                <th className="pb-2 font-medium">Jumlah Item</th>
-                <th className="pb-2 font-medium">Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              {dummyBAPB.slice(0, 5).map(bapb => (
-                <tr key={bapb.id} className="border-b last:border-0 hover:bg-gray-50">
-                  <td className="py-3 text-sm font-mono text-slate-700">{bapb.nomor}</td>
-                  <td className="py-3 text-sm text-slate-600">{bapb.tanggal}</td>
-                  <td className="py-3 text-sm text-slate-600">{bapb.pemasok}</td>
-                  <td className="py-3 text-sm text-slate-600">{bapb.bahan.length} item</td>
-                  <td className="py-3">
-                    <span className={`text-xs px-2 py-1 rounded font-medium ${
-                      bapb.status === 'Layak' ? 'bg-emerald-100 text-emerald-700' :
-                      bapb.status === 'Rusak Ringan' ? 'bg-amber-100 text-amber-700' :
-                      'bg-red-100 text-red-700'
-                    }`}>
-                      {bapb.status}
-                    </span>
-                  </td>
+          <div className="overflow-x-auto">
+            <table className="w-full">
+              <thead>
+                <tr className="text-left text-xs text-slate-500 border-b">
+                  <th className="pb-2 font-medium">No. BAPB</th>
+                  <th className="pb-2 font-medium">Tanggal</th>
+                  <th className="pb-2 font-medium">Pemasok</th>
+                  <th className="pb-2 font-medium">Jumlah Item</th>
+                  <th className="pb-2 font-medium">Status</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {dummyBAPB.slice(0, 5).map(bapb => (
+                  <tr key={bapb.id} className="border-b last:border-0 hover:bg-gray-50">
+                    <td className="py-3 text-sm font-mono text-slate-700">{bapb.nomor}</td>
+                    <td className="py-3 text-sm text-slate-600">{bapb.tanggal}</td>
+                    <td className="py-3 text-sm text-slate-600">{bapb.pemasok}</td>
+                    <td className="py-3 text-sm text-slate-600">{bapb.bahan.length} item</td>
+                    <td className="py-3">
+                      <span className={`text-xs px-2 py-1 rounded font-medium ${
+                        bapb.status === 'Layak' ? 'bg-emerald-100 text-emerald-700' :
+                        bapb.status === 'Rusak Ringan' ? 'bg-amber-100 text-amber-700' :
+                        'bg-red-100 text-red-700'
+                      }`}>
+                        {bapb.status}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
 
         {/* Quick Actions */}
@@ -301,7 +303,7 @@ export default function Modul1Dashboard() {
             Selengkapnya →
           </Link>
         </div>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {dummyBahan.slice(0, 6).map(bahan => (
             <div
               key={bahan.id}

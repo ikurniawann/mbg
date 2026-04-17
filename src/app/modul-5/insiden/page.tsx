@@ -93,7 +93,7 @@ export default function InsidenPage() {
       {showForm && (
         <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 mb-6">
           <h2 className="font-semibold text-slate-800 mb-4">Form Laporan Insiden Baru</h2>
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-1">Jenis Insiden</label>
               <select className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-teal-500">
@@ -158,7 +158,7 @@ export default function InsidenPage() {
       )}
 
       {/* Stats */}
-      <div className="grid grid-cols-3 gap-4 mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
           <p className="text-sm text-slate-500">Total Insiden</p>
           <p className="text-3xl font-bold text-slate-800 mt-1">{dummyInsiden.length}</p>
@@ -181,7 +181,7 @@ export default function InsidenPage() {
       </div>
 
       {/* Filter */}
-      <div className="flex items-center gap-4 mb-6">
+      <div className="flex flex-wrap items-center gap-4 mb-6">
         <span className="text-sm text-slate-600 font-medium">Filter Jenis:</span>
         {['all', 'Kerusakan', 'Penolakan', 'Keterlambatan Besar'].map((jenis) => (
           <button
@@ -199,7 +199,7 @@ export default function InsidenPage() {
       </div>
 
       {/* Insiden Cards */}
-      <div className="grid grid-cols-2 gap-4 mb-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-6">
         {filteredInsiden.map((insiden) => (
           <div
             key={insiden.id}
@@ -223,7 +223,7 @@ export default function InsidenPage() {
 
             <p className="text-sm text-slate-600 mb-4">{insiden.deskripsi}</p>
 
-            <div className="grid grid-cols-2 gap-3 mb-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
               <div className="bg-gray-50 rounded-lg p-3">
                 <p className="text-xs text-slate-500">Rute</p>
                 <p className="text-sm font-medium text-slate-800">{insiden.ruteId}</p>
@@ -232,7 +232,7 @@ export default function InsidenPage() {
                 <p className="text-xs text-slate-500">Pelapor</p>
                 <p className="text-sm font-medium text-slate-800">{insiden.pelapor}</p>
               </div>
-              <div className="col-span-2 bg-gray-50 rounded-lg p-3">
+              <div className="col-span-1 sm:col-span-2 bg-gray-50 rounded-lg p-3">
                 <p className="text-xs text-slate-500">Waktu Lapor</p>
                 <p className="text-sm font-medium text-slate-800">{insiden.tanggal}</p>
               </div>

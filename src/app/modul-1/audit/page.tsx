@@ -205,7 +205,8 @@ export default function AuditPage() {
 
       {/* Timeline */}
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-        <div className="divide-y divide-gray-100">
+        <div className="overflow-x-auto">
+          <div className="divide-y divide-gray-100">
           {filteredAudit.length === 0 ? (
             <div className="py-12 text-center text-slate-400">
               <span className="text-4xl">📋</span>
@@ -262,6 +263,7 @@ export default function AuditPage() {
               );
             })
           )}
+        </div>
         </div>
       </div>
     </div>

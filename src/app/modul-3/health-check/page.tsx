@@ -109,7 +109,7 @@ export default function HealthCheckPage() {
       )}
 
       {/* Stats Row */}
-      <div className="grid grid-cols-4 gap-4 mb-6">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
           <p className="text-sm text-slate-500">Total Staf</p>
           <p className="text-3xl font-bold text-slate-800 mt-1">{healthChecks.length}</p>
@@ -247,7 +247,7 @@ export default function HealthCheckPage() {
         <form onSubmit={handleSubmit} className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 max-w-2xl">
           <h2 className="font-semibold text-slate-800 mb-4">Form Health Check Baru</h2>
 
-          <div className="grid grid-cols-2 gap-4 mb-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
             <div>
               <label className="block text-sm font-medium text-slate-600 mb-1">Nama Staf</label>
               <input
@@ -285,7 +285,7 @@ export default function HealthCheckPage() {
             </label>
           </div>
 
-          <div className="grid grid-cols-2 gap-4 mb-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
             <div>
               <label className="block text-sm font-medium text-slate-600 mb-1">
                 Suhu Tubuh (°C) — Normal: 35.5–37.5°C
@@ -351,7 +351,7 @@ export default function HealthCheckPage() {
           {/* APD Checklist */}
           <div className="mb-4">
             <label className="block text-sm font-medium text-slate-600 mb-2">Kelengkapan APD</label>
-            <div className="grid grid-cols-4 gap-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2">
               {APD_ITEMS.map(apd => (
                 <label
                   key={apd}

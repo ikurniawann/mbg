@@ -36,7 +36,7 @@ export default function KeuanganPage() {
       </header>
 
       {/* Summary Cards */}
-      <div className="grid grid-cols-3 gap-4 mb-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-6">
         <div className="bg-violet-600 rounded-xl p-6 text-white shadow-lg">
           <div className="flex items-center justify-between mb-3">
             <span className="text-sm font-medium text-violet-200">Total Bantuan MBG</span>
@@ -158,7 +158,7 @@ export default function KeuanganPage() {
       {/* Cost per Porsi */}
       <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 mb-6">
         <h2 className="font-semibold text-slate-800 mb-4">🍽️ Analisis Cost per Porsi</h2>
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="text-center p-4 bg-gray-50 rounded-xl border border-gray-200">
             <p className="text-xs text-slate-500 font-medium mb-2">Total Porsi</p>
             <p className="text-2xl font-black text-slate-700">

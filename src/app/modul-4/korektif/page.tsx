@@ -183,7 +183,7 @@ export default function KorektifPage() {
       </header>
 
       {/* Stats */}
-      <div className="grid grid-cols-4 gap-4 mb-6">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         {[
           { label: 'Open', count: openCount, color: 'text-red-600 border-red-300' },
           { label: 'In Progress', count: inProgressCount, color: 'text-amber-600 border-amber-300' },
@@ -198,7 +198,7 @@ export default function KorektifPage() {
       </div>
 
       {/* Search */}
-      <div className="flex gap-3 mb-6">
+      <div className="flex flex-col sm:flex-row gap-3 mb-6">
         <input
           type="text"
           value={search}
@@ -206,7 +206,7 @@ export default function KorektifPage() {
           placeholder="Cari CAR number, masalah, atau lokasi..."
           className="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-red-500"
         />
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           {(['semua', 'Open', 'In Progress', 'Closed'] as const).map(s => (
             <button
               key={s}
@@ -309,7 +309,7 @@ export default function KorektifPage() {
                   rows={3}
                 />
               </div>
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div>
                   <label className="block text-sm font-medium text-slate-700 mb-1">Kategori *</label>
                   <select
@@ -349,7 +349,7 @@ export default function KorektifPage() {
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm"
                 />
               </div>
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div>
                   <label className="block text-sm font-medium text-slate-700 mb-1">Responsible</label>
                   <input
@@ -414,7 +414,7 @@ export default function KorektifPage() {
                 <p className="text-xs text-red-500 font-medium mb-1">MASALAH</p>
                 <p className="text-slate-800 font-medium">{selectedEntry.masalah}</p>
               </div>
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div>
                   <p className="text-xs text-slate-500">Kategori</p>
                   <p className="font-medium">{selectedEntry.kategori}</p>
@@ -436,7 +436,7 @@ export default function KorektifPage() {
                   <p className="text-slate-700">{selectedEntry.tindakan}</p>
                 </div>
               )}
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div>
                   <p className="text-xs text-slate-500">Responsible</p>
                   <p className="font-medium">{selectedEntry.responsible || '-'}</p>

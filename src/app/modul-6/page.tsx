@@ -77,7 +77,7 @@ export default function Modul6Dashboard() {
       </div>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-4 gap-4 mb-6">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
           <p className="text-sm text-slate-500">Total Porsi</p>
           <p className="text-3xl font-bold text-violet-600 mt-1">
@@ -111,7 +111,7 @@ export default function Modul6Dashboard() {
       {/* Ringkasan Gizi */}
       <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 mb-6">
         <h2 className="font-semibold text-slate-800 mb-4">📊 Ringkasan Gizi Rata-rata per Porsi</h2>
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="bg-violet-50 rounded-xl p-4 border border-violet-200 text-center">
             <p className="text-xs text-violet-600 font-medium mb-2">Karbohidrat</p>
             <p className="text-2xl font-black text-violet-700">
@@ -196,7 +196,7 @@ export default function Modul6Dashboard() {
       </div>
 
       {/* Quick Links */}
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
           <h2 className="font-semibold text-slate-800 mb-4">Aksi Cepat</h2>
           <div className="space-y-3">

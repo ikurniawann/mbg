@@ -149,7 +149,8 @@ export default function StokPage() {
 
       {/* Table */}
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-        <table className="w-full">
+        <div className="overflow-x-auto">
+          <table className="w-full">
           <thead className="bg-slate-50 border-b border-gray-200">
             <tr>
               <th className="text-left px-4 py-3 text-xs font-semibold text-slate-600 uppercase tracking-wider">
@@ -268,6 +269,7 @@ export default function StokPage() {
             )}
           </tbody>
         </table>
+        </div>
       </div>
     </div>
   );

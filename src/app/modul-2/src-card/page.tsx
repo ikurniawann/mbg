@@ -128,7 +128,7 @@ export default function SRCCardPage() {
       </header>
 
       {/* SRC Cards List */}
-      <div className="grid grid-cols-3 gap-4 mb-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
         {dummySRC.map(src => (
           <div
             key={src.id}
@@ -184,7 +184,7 @@ export default function SRCCardPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-3 divide-x divide-gray-200">
+          <div className="grid grid-cols-1 md:grid-cols-3 divide-x divide-gray-200">
             {/* Bahan */}
             <div className="p-6">
               <h3 className="font-semibold text-slate-800 mb-4 flex items-center gap-2">

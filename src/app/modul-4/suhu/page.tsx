@@ -199,14 +199,14 @@ export default function SuhuPage() {
                   'border-gray-200 bg-gray-50'
                 }`}
               >
-                <div className="flex items-center gap-4">
-                  <div className="w-48">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
+                  <div className="flex-1">
                     <p className="font-semibold text-slate-800">{ccp.type}</p>
                     <p className="text-xs text-slate-400 mt-1">
                       Batas: {ccp.batasBawah}°C — {ccp.batasAtas}°C
                     </p>
                   </div>
-                  <div className="w-32">
+                  <div className="w-full sm:w-24">
                     <label className="block text-xs font-medium text-slate-600 mb-1">Suhu (°C)</label>
                     <input
                       type="number"
@@ -231,7 +231,7 @@ export default function SuhuPage() {
                       className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm bg-white"
                     />
                   </div>
-                  <div className="flex items-center">
+                  <div className="flex items-center justify-center">
                     {status === 'ok' && entry?.suhu && (
                       <span className="text-emerald-500 text-2xl">✓</span>
                     )}
@@ -265,7 +265,7 @@ export default function SuhuPage() {
       <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
         <h2 className="font-semibold text-slate-800 mb-4">Riwayat Terakhir</h2>
         <div className="bg-slate-50 rounded-xl p-4">
-          <div className="grid grid-cols-7 gap-2 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-2 text-center">
             {['P. Beku', 'Cold Storage', 'CR #1', 'CR #2', 'Memasak', 'Hot Hold', 'Distribusi'].map((label, idx) => (
               <div key={label}>
                 <p className="text-xs text-slate-500">{label}</p>

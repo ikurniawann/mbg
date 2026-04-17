@@ -66,7 +66,7 @@ export default function Modul5Dashboard() {
       )}
 
       {/* Stats */}
-      <div className="grid grid-cols-5 gap-4 mb-6">
+      <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 mb-6">
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
           <p className="text-sm text-slate-500">Total Rute</p>
           <p className="text-3xl font-bold text-slate-800 mt-1">{rute.length}</p>

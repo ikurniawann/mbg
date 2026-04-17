@@ -85,7 +85,7 @@ export default function ArsipPage() {
       </header>
 
       {/* Stats */}
-      <div className="grid grid-cols-3 gap-4 mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
           <p className="text-sm text-slate-500">Total Revisi</p>
           <p className="text-3xl font-bold text-slate-800 mt-1">{DUMMY_REVISI.length}</p>

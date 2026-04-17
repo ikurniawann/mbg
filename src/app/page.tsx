@@ -139,7 +139,7 @@ export default function Dashboard() {
         )}
 
         {/* Stats Cards */}
-        <div className="grid grid-cols-4 gap-4 mb-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
           <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-200">
             <p className="text-sm text-slate-500 mb-1">Target Porsi</p>
             <p className="text-2xl font-bold text-slate-800">
@@ -177,7 +177,7 @@ export default function Dashboard() {
         </div>
 
         {/* Progress & Charts Row */}
-        <div className="grid grid-cols-2 gap-6 mb-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
           {/* Progress Produksi */}
           <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
             <h3 className="font-semibold text-slate-800 mb-4">Progress Produksi</h3>
@@ -232,7 +232,7 @@ export default function Dashboard() {
         </div>
 
         {/* Bottom Row */}
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Monitoring Suhu CCP */}
           <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
             <h3 className="font-semibold text-slate-800 mb-4">Monitoring Suhu CCP</h3>
@@ -293,7 +293,7 @@ export default function Dashboard() {
         {/* Quick Access Modules */}
         <div className="mt-6">
           <h3 className="font-semibold text-slate-800 mb-4">Akses Modul</h3>
-          <div className="grid grid-cols-7 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-4">
             {MODULS.map((modul) => (
               <Link
                 key={modul.id}

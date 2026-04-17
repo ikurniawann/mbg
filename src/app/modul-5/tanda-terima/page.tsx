@@ -31,7 +31,7 @@ export default function TandaTerimaPage() {
       {showForm && (
         <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 mb-6">
           <h2 className="font-semibold text-slate-800 mb-4">Form Tanda Terima Baru</h2>
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-1">Nama Penerima</label>
               <input
@@ -108,7 +108,7 @@ export default function TandaTerimaPage() {
       )}
 
       {/* Summary Cards */}
-      <div className="grid grid-cols-4 gap-4 mb-6">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
           <p className="text-sm text-slate-500">Total Tanda Terima</p>
           <p className="text-3xl font-bold text-slate-800 mt-1">{tandaTerima.length}</p>
@@ -199,7 +199,7 @@ export default function TandaTerimaPage() {
             <p className="text-xs text-slate-500 uppercase tracking-wider">TANDA TERIMA</p>
             <p className="text-lg font-bold text-slate-800 mt-1">Program Makan Bergizi Gratis (MBG)</p>
           </div>
-          <div className="grid grid-cols-2 gap-6 text-sm">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
             <div>
               <p className="text-slate-500 mb-1">Nama Penerima:</p>
               <p className="font-medium text-slate-800 border-b border-gray-300 pb-1">_______________________</p>
@@ -217,7 +217,7 @@ export default function TandaTerimaPage() {
               <p className="font-medium text-slate-800 border-b border-gray-300 pb-1">___________</p>
             </div>
           </div>
-          <div className="mt-6 grid grid-cols-2 gap-6">
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="text-center">
               <p className="text-sm text-slate-500 mb-8">Pemberi Layanan</p>
               <p className="font-medium text-slate-800 border-t border-gray-300 pt-2">_______________________</p>

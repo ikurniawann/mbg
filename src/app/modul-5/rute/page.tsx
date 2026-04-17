@@ -48,7 +48,7 @@ export default function RuteTrackingPage() {
       </header>
 
       {/* Stats */}
-      <div className="grid grid-cols-4 gap-4 mb-6">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         {[
           { label: 'Belum Berangkat', count: rute.filter(r => r.status === 'Belum Berangkat').length, color: 'text-gray-600' },
           { label: 'Dalam Perjalanan', count: rute.filter(r => r.status === 'Dalam Perjalanan').length, color: 'text-blue-600' },
@@ -67,7 +67,7 @@ export default function RuteTrackingPage() {
       </div>
 
       {/* Filter Bar */}
-      <div className="flex items-center gap-4 mb-6">
+      <div className="flex flex-wrap items-center gap-4 mb-6">
         <span className="text-sm text-slate-600 font-medium">Filter:</span>
         {['all', 'Belum Berangkat', 'Dalam Perjalanan', 'Terkirim', 'Terlambat'].map((status) => (
           <button
@@ -85,7 +85,7 @@ export default function RuteTrackingPage() {
       </div>
 
       {/* Rute Cards */}
-      <div className="grid grid-cols-2 gap-4 mb-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-6">
         {filteredRute.map((r) => (
           <div
             key={r.id}
@@ -105,7 +105,7 @@ export default function RuteTrackingPage() {
               </span>
             </div>
 
-            <div className="grid grid-cols-3 gap-4 mb-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
               <div className="bg-gray-50 rounded-lg p-3">
                 <p className="text-xs text-slate-500">Jumlah Box</p>
                 <p className="text-xl font-bold text-slate-800">{r.jumlahBox}</p>

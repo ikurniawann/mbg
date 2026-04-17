@@ -59,7 +59,7 @@ export default function Modul4Dashboard() {
       )}
 
       {/* Stats */}
-      <div className="grid grid-cols-4 gap-4 mb-6">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
           <p className="text-sm text-slate-500">CCP Points</p>
           <p className="text-3xl font-bold text-slate-800 mt-1">{suhu.ccps.length}</p>
@@ -84,10 +84,10 @@ export default function Modul4Dashboard() {
         </div>
       </div>
 
-      {/* CCP Monitoring Grid */}
-      <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 mb-6">
-        <h2 className="font-semibold text-slate-800 mb-4">Monitoring Suhu 6 CCP</h2>
-        <div className="grid grid-cols-3 gap-4">
+        {/* CCP Monitoring Grid */}
+        <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 mb-6">
+          <h2 className="font-semibold text-slate-800 mb-4">Monitoring Suhu 6 CCP</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {suhu.ccps.map((ccp, idx) => {
             const bounds = CCP_LABELS[ccp.type] || { min: 0, max: 100 };
             const pct = Math.min(((ccp.suhu - bounds.min) / (bounds.max - bounds.min)) * 100, 120);

@@ -135,7 +135,7 @@ export default function MenuMingguanPage() {
       {/* Gizi Summary Bar */}
       <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-200 mb-6">
         <p className="text-xs text-slate-500 mb-3 font-medium uppercase tracking-wide">Total Gizi Minggu Ini</p>
-        <div className="grid grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <div>
             <p className="text-xs text-slate-500">Karbohidrat</p>
             <p className="text-xl font-bold text-amber-600">{gizi.karbo}g</p>

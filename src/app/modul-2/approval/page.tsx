@@ -98,7 +98,7 @@ export default function ApprovalPage() {
       </header>
 
       {/* Stats */}
-      <div className="grid grid-cols-4 gap-4 mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         {[
           { label: 'Draft', count: draftCount, color: 'bg-gray-100 text-gray-600', border: 'border-gray-300' },
           { label: 'Review Gizi', count: pendingCount, color: 'bg-blue-100 text-blue-700', border: 'border-blue-300' },

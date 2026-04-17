@@ -123,7 +123,7 @@ export default function BAPBPage() {
 
           {/* Labels Preview */}
           <h3 className="font-semibold text-slate-800 mb-4">Label Bahan ({previewLabels.length})</h3>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {previewLabels.map(({ kode, bahan }) => (
               <div
                 key={kode}
@@ -190,7 +190,7 @@ export default function BAPBPage() {
           {/* BAPB Summary */}
           <div className="mt-6 bg-white rounded-xl p-6 border border-gray-200">
             <h3 className="font-semibold text-slate-800 mb-4">Ringkasan BAPB</h3>
-            <div className="grid grid-cols-2 gap-4 text-sm">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
               <div>
                 <p className="text-slate-500">No. BAPB</p>
                 <p className="font-mono font-semibold">{bapbNumber}</p>
@@ -232,7 +232,7 @@ export default function BAPBPage() {
         {/* Header Info */}
         <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
           <h2 className="font-semibold text-slate-800 mb-4">Informasi BAPB</h2>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-1">Tanggal</label>
               <input
@@ -272,7 +272,7 @@ export default function BAPBPage() {
         {/* Add Bahan */}
         <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
           <h2 className="font-semibold text-slate-800 mb-4">Tambah Bahan</h2>
-          <div className="grid grid-cols-6 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
             <div className="col-span-2">
               <label className="block text-xs font-medium text-slate-600 mb-1">Nama Bahan</label>
               <input

@@ -36,7 +36,7 @@ export default function GiziPage() {
       </header>
 
       {/* Overview Cards */}
-      <div className="grid grid-cols-4 gap-4 mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         <div className={`rounded-xl p-5 border-2 ${
           CARBS_Adequate ? 'bg-emerald-50 border-emerald-300' : 'bg-amber-50 border-amber-300'
         }`}>

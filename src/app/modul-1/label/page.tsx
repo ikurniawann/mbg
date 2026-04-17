@@ -119,7 +119,7 @@ export default function LabelPage() {
         <p className="text-sm text-slate-500">Generate label dengan kode MBG-MMYY-NNN + QR Code</p>
       </header>
 
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Form */}
         <div className="col-span-1">
           <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
@@ -261,7 +261,7 @@ export default function LabelPage() {
                 <p className="mt-4">Belum ada label. Generate label baru dari form.</p>
               </div>
             ) : (
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {labels.map(label => (
                   <div
                     key={label.kode}

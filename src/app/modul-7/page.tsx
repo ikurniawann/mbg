@@ -161,7 +161,7 @@ export default function Modul7Dashboard() {
                     ))}
                   </div>
                 </div>
-                <div className="grid grid-cols-3 gap-2 mt-3">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mt-3">
                   <div className="text-center p-2 bg-white rounded-lg border border-amber-200">
                     <p className="text-xs text-slate-500">Rasa</p>
                     <p className="font-bold text-slate-800">{fb.rating.rasa}</p>

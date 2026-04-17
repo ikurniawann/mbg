@@ -100,7 +100,7 @@ export default function Modul3Dashboard() {
       </div>
 
       {/* Progress & Stats Row */}
-      <div className="grid grid-cols-4 gap-4 mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
           <p className="text-sm text-slate-500">Target Porsi</p>
           <p className="text-3xl font-bold text-slate-800 mt-1">{produksi.targetPorsi}</p>

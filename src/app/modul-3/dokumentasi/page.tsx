@@ -173,7 +173,7 @@ export default function DokumentasiPage() {
       </div>
 
       {/* Photo Grid */}
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {filtered.map(photo => (
           <div key={photo.id} className="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-200 hover:shadow-md transition">
             <div className="bg-gray-100 h-40 flex items-center justify-center relative">
