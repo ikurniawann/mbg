@@ -75,11 +75,11 @@ export default function KMPage() {
   const [selectedKM, setSelectedKM] = useState<KejadianMenonjol | null>(null);
 
   // Form state
-  const [form, setForm] = useState({
-    lokasi: '', kelompok: 'Reguler', jenis: 'Gangguan Pencercaian' as JenisKM,
-    jumlahDampak: 1, severity: 'Minor' as SeverityKM,
+  const [form, setForm] = useState<Omit<KejadianMenonjol, 'id' | 'tanggalKejadian' | 'tanggalLapor' | 'status' | 'pelapor' | 'closedAt' | 'followUp'>>({
+    lokasi: '', kelompok: 'Reguler', jenis: 'Gangguan Pencernaan',
+    jumlahDampak: 1, severity: 'Minor',
     deskripsi: '', kronologi: '', tindakanSegera: '',
-    notifiedKe: [] as string[],
+    notifiedKe: [],
   });
 
   const openKM = kmList.filter(k => k.status === 'Open').length;

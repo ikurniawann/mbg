@@ -127,7 +127,7 @@ export interface MenuMingguan {
 
 // ---------- MODUL 3: PRODUKSI DAPUR ----------
 
-export type Shift = 'Persiapan' | 'Pengolahan' | 'Pemorsian' | 'Packing' | 'Kebersihan';
+export type Shift = 'Penerimaan Bahan' | 'Persiapan' | 'Pengolahan' | 'Pemorsian' | 'Packing' | 'Kebersihan';
 
 export interface TugasShift {
   shift: Shift;
