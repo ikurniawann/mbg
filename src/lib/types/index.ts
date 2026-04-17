@@ -37,6 +37,7 @@ export type CCPType =
   | 'Penerimaan Beku'
   | 'Cold Storage'
   | 'Cold Room'
+  | 'Cold Room #1'
   | 'Cold Room #2'
   | 'Memasak'
   | 'Hot Holding'
