@@ -37,6 +37,7 @@ export type CCPType =
   | 'Penerimaan Beku'
   | 'Cold Storage'
   | 'Cold Room'
+  | 'Cold Room #2'
   | 'Memasak'
   | 'Hot Holding'
   | 'Distribusi';
@@ -131,7 +132,7 @@ export interface TugasShift {
   shift: Shift;
   petugas: string;
   tugas: string;
-  status: 'pending' | 'completed';
+  status: 'pending' | 'completed' | 'in_progress';
   completedAt?: string;
 }
 
@@ -140,7 +141,7 @@ export interface ProduksiHarian {
   tanggal: string;
   menuId: string;
   targetPorsi: number;
- realisasiPorsi: number;
+  realizedPorsi: number;
   shiftTasks: TugasShift[];
   bahanTerpakai: {
     nama: string;
