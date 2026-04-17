@@ -113,7 +113,7 @@ export default function KMPage() {
         <div>
           <h1 className="text-2xl font-bold text-slate-800">Kejadian Menonjol (KM)</h1>
           <div className="flex items-center gap-3 mt-1">
-            <p className="text-sm text-slate-500">Selasa, 17 April 2026</p>
+            <p className="text-sm text-slate-700">Selasa, 17 April 2026</p>
             <span className="px-2 py-0.5 bg-red-100 text-red-700 rounded text-xs font-medium border border-red-300">
               🇮🇩 SK BGN No. 63421/2026
             </span>
@@ -147,26 +147,26 @@ export default function KMPage() {
       {/* Stats */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-          <p className="text-sm text-slate-500">Total KM</p>
+          <p className="text-sm text-slate-700">Total KM</p>
           <p className="text-3xl font-bold text-slate-800 mt-1">{kmList.length}</p>
-          <p className="text-xs text-slate-400 mt-1">kejadian</p>
+          <p className="text-xs text-slate-600 mt-1">kejadian</p>
         </div>
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-          <p className="text-sm text-slate-500">Open</p>
+          <p className="text-sm text-slate-700">Open</p>
           <p className="text-3xl font-bold text-red-600 mt-1">{openKM}</p>
-          <p className="text-xs text-slate-400 mt-1">belum ditutup</p>
+          <p className="text-xs text-slate-600 mt-1">belum ditutup</p>
         </div>
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-          <p className="text-sm text-slate-500">Investigasi</p>
+          <p className="text-sm text-slate-700">Investigasi</p>
           <p className="text-3xl font-bold text-amber-600 mt-1">{investigasiKM}</p>
-          <p className="text-xs text-slate-400 mt-1">sedang diproses</p>
+          <p className="text-xs text-slate-600 mt-1">sedang diproses</p>
         </div>
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-          <p className="text-sm text-slate-500">Closed</p>
+          <p className="text-sm text-slate-700">Closed</p>
           <p className="text-3xl font-bold text-emerald-600 mt-1">
             {kmList.filter(k => k.status === 'Closed').length}
           </p>
-          <p className="text-xs text-slate-400 mt-1">selesai</p>
+          <p className="text-xs text-slate-600 mt-1">selesai</p>
         </div>
       </div>
 
@@ -175,7 +175,7 @@ export default function KMPage() {
         <form onSubmit={handleSubmit} className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 mb-6">
           <div className="flex items-center justify-between mb-4">
             <h2 className="font-semibold text-slate-800">🚨 Form Pelaporan Kejadian Menonjol</h2>
-            <button type="button" onClick={() => setShowForm(false)} className="text-slate-400 hover:text-slate-600 text-xl">✕</button>
+            <button type="button" onClick={() => setShowForm(false)} className="text-slate-600 hover:text-slate-600 text-xl">✕</button>
           </div>
 
           <div className="bg-red-50 border border-red-200 rounded-lg p-3 mb-4">
@@ -216,7 +216,7 @@ export default function KMPage() {
               <div className="flex gap-2 mt-1">
                 {(['Kritis', 'Mayor', 'Minor'] as SeverityKM[]).map(s => (
                   <button key={s} type="button" onClick={() => setForm(p => ({ ...p, severity: s }))}
-                    className={`flex-1 py-2 rounded-lg text-xs font-medium border-2 transition ${form.severity === s ? SEVERITY_COLORS[s] : 'border-gray-200 text-slate-400'}`}>
+                    className={`flex-1 py-2 rounded-lg text-xs font-medium border-2 transition ${form.severity === s ? SEVERITY_COLORS[s] : 'border-gray-200 text-slate-600'}`}>
                     {s}
                   </button>
                 ))}
@@ -247,7 +247,7 @@ export default function KMPage() {
               <label className="block text-sm font-medium text-slate-600 mb-2">Notifikasi Dikirim ke:</label>
               <div className="flex flex-wrap gap-2">
                 {NOTIFIED_OPTIONS.map(n => (
-                  <label key={n} className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border-2 text-xs font-medium cursor-pointer transition ${form.notifiedKe.includes(n) ? 'border-blue-400 bg-blue-50 text-blue-700' : 'border-gray-200 text-slate-500'}`}>
+                  <label key={n} className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border-2 text-xs font-medium cursor-pointer transition ${form.notifiedKe.includes(n) ? 'border-blue-400 bg-blue-50 text-blue-700' : 'border-gray-200 text-slate-700'}`}>
                     <input type="checkbox" className="accent-blue-500 w-3 h-3"
                       checked={form.notifiedKe.includes(n)}
                       onChange={e => setForm(p => ({
@@ -276,7 +276,7 @@ export default function KMPage() {
 
       {/* Filters */}
       <div className="flex items-center gap-3 mb-4">
-        <span className="text-sm text-slate-500">Filter:</span>
+        <span className="text-sm text-slate-700">Filter:</span>
         <select className="border border-gray-300 rounded-lg px-3 py-1.5 text-xs focus:outline-none focus:ring-2 focus:ring-blue-400"
           value={filterStatus} onChange={e => setFilterStatus(e.target.value as any)}>
           <option value="All">Semua Status</option>
@@ -291,7 +291,7 @@ export default function KMPage() {
           <option value="Mayor">Mayor</option>
           <option value="Minor">Minor</option>
         </select>
-        <span className="ml-auto text-xs text-slate-400">{filtered.length} kejadian</span>
+        <span className="ml-auto text-xs text-slate-600">{filtered.length} kejadian</span>
       </div>
 
       {/* KM List */}
@@ -311,13 +311,13 @@ export default function KMPage() {
                   <span className={`px-2 py-0.5 rounded text-xs font-medium ${STATUS_COLORS[km.status]}`}>
                     {km.status}
                   </span>
-                  <span className="text-xs text-slate-400">·</span>
-                  <span className="text-xs text-slate-500">{km.jenis}</span>
-                  <span className="text-xs text-slate-400">·</span>
+                  <span className="text-xs text-slate-600">·</span>
+                  <span className="text-xs text-slate-700">{km.jenis}</span>
+                  <span className="text-xs text-slate-600">·</span>
                   <span className="text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded">{km.kelompok}</span>
                 </div>
                 <h3 className="font-semibold text-slate-800">{km.deskripsi}</h3>
-                <div className="flex items-center gap-4 mt-1 text-xs text-slate-500">
+                <div className="flex items-center gap-4 mt-1 text-xs text-slate-700">
                   <span>📍 {km.lokasi}</span>
                   <span>📅 {km.tanggalKejadian}</span>
                   <span>👥 {km.jumlahDampak} terdampak</span>
@@ -325,7 +325,7 @@ export default function KMPage() {
                 </div>
               </div>
               <div className="text-right ml-4">
-                <span className="text-xs text-slate-400">ID: {km.id.toUpperCase()}</span>
+                <span className="text-xs text-slate-600">ID: {km.id.toUpperCase()}</span>
               </div>
             </div>
 
@@ -333,21 +333,21 @@ export default function KMPage() {
             {selectedKM?.id === km.id && (
               <div className="mt-4 pt-4 border-t border-gray-100 grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <p className="text-xs font-semibold text-slate-500 uppercase mb-1">Kronologi</p>
+                  <p className="text-xs font-semibold text-slate-700 uppercase mb-1">Kronologi</p>
                   <p className="text-sm text-slate-700">{km.kronologi}</p>
                 </div>
                 <div>
-                  <p className="text-xs font-semibold text-slate-500 uppercase mb-1">Tindakan Segera</p>
+                  <p className="text-xs font-semibold text-slate-700 uppercase mb-1">Tindakan Segera</p>
                   <p className="text-sm text-slate-700">{km.tindakanSegera}</p>
                 </div>
                 {km.followUp && (
                   <div className="col-span-2">
-                    <p className="text-xs font-semibold text-slate-500 uppercase mb-1">Follow Up</p>
+                    <p className="text-xs font-semibold text-slate-700 uppercase mb-1">Follow Up</p>
                     <p className="text-sm text-slate-700">{km.followUp}</p>
                   </div>
                 )}
                 <div className="col-span-2">
-                  <p className="text-xs font-semibold text-slate-500 uppercase mb-1">Notifikasi Dikirim ke</p>
+                  <p className="text-xs font-semibold text-slate-700 uppercase mb-1">Notifikasi Dikirim ke</p>
                   <div className="flex flex-wrap gap-1 mt-1">
                     {km.notifiedKe.map(n => (
                       <span key={n} className="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded">{n}</span>
@@ -356,7 +356,7 @@ export default function KMPage() {
                 </div>
                 {km.closedAt && (
                   <div>
-                    <p className="text-xs font-semibold text-slate-500 uppercase mb-1">Ditutup Pada</p>
+                    <p className="text-xs font-semibold text-slate-700 uppercase mb-1">Ditutup Pada</p>
                     <p className="text-sm text-emerald-600">{km.closedAt}</p>
                   </div>
                 )}

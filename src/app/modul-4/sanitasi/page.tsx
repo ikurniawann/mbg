@@ -83,7 +83,7 @@ export default function SanitasiPage() {
         <div>
           <h1 className="text-2xl font-bold text-slate-800">Checklist Sanitasi</h1>
           <div className="flex items-center gap-3 mt-1">
-            <p className="text-sm text-slate-500">Harian · Mingguan · Bulanan</p>
+            <p className="text-sm text-slate-700">Harian · Mingguan · Bulanan</p>
             <span className="px-2 py-0.5 bg-red-100 text-red-700 rounded text-xs font-medium border border-red-300">
               🇮🇩 SK BGN No. 244/2025 & 63421/2026
             </span>
@@ -125,7 +125,7 @@ export default function SanitasiPage() {
                   style={{ width: `${pct}%` }}
                 />
               </div>
-              <p className="text-xs text-slate-400 mt-1">{pct}% selesai</p>
+              <p className="text-xs text-slate-600 mt-1">{pct}% selesai</p>
             </div>
           );
         })}
@@ -158,7 +158,7 @@ export default function SanitasiPage() {
               onClick={() => !submitted && toggle(item.id)}
             >
               <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 ${
-                item.checked ? 'bg-emerald-500 text-white' : 'bg-gray-200 text-gray-400'
+                item.checked ? 'bg-emerald-500 text-white' : 'bg-gray-200 text-gray-600'
               }`}>
                 {item.checked ? '✓' : items.filter(i => i.freq === item.freq).indexOf(item) + 1}
               </div>

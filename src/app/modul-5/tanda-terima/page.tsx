@@ -17,7 +17,7 @@ export default function TandaTerimaPage() {
             <Link href="/modul-5" className="text-sm text-teal-600 hover:text-teal-700">← Modul 5</Link>
           </div>
           <h1 className="text-2xl font-bold text-slate-800">Tanda Terima Distribusi</h1>
-          <p className="text-sm text-slate-500 mt-1">Selasa, 17 April 2026 • Kelola bukti serah terima makanan</p>
+          <p className="text-sm text-slate-700 mt-1">Selasa, 17 April 2026 • Kelola bukti serah terima makanan</p>
         </div>
         <button
           onClick={() => setShowForm(!showForm)}
@@ -85,15 +85,15 @@ export default function TandaTerimaPage() {
             <label className="block text-sm font-medium text-slate-700 mb-1">Upload Foto Bukti</label>
             <div className="border-2 border-dashed border-gray-300 rounded-xl p-6 text-center hover:border-teal-400 transition">
               <span className="text-3xl">📷</span>
-              <p className="text-sm text-slate-500 mt-2">Klik untuk upload atau drag & drop</p>
-              <p className="text-xs text-slate-400 mt-1">PNG, JPG hingga 5MB</p>
+              <p className="text-sm text-slate-700 mt-2">Klik untuk upload atau drag & drop</p>
+              <p className="text-xs text-slate-600 mt-1">PNG, JPG hingga 5MB</p>
             </div>
           </div>
           <div className="mt-4">
             <label className="block text-sm font-medium text-slate-700 mb-1">Tanda Tangan Digital</label>
             <div className="bg-gray-50 border border-gray-300 rounded-xl p-4 text-center">
-              <p className="text-sm text-slate-500">Area tanda tangan</p>
-              <p className="text-xs text-slate-400 mt-1">Gambar tanda tangan atau ketik nama</p>
+              <p className="text-sm text-slate-700">Area tanda tangan</p>
+              <p className="text-xs text-slate-600 mt-1">Gambar tanda tangan atau ketik nama</p>
             </div>
           </div>
           <div className="flex gap-3 mt-6">
@@ -110,30 +110,30 @@ export default function TandaTerimaPage() {
       {/* Summary Cards */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-          <p className="text-sm text-slate-500">Total Tanda Terima</p>
+          <p className="text-sm text-slate-700">Total Tanda Terima</p>
           <p className="text-3xl font-bold text-slate-800 mt-1">{tandaTerima.length}</p>
-          <p className="text-xs text-slate-400 mt-1">dokumen</p>
+          <p className="text-xs text-slate-600 mt-1">dokumen</p>
         </div>
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-          <p className="text-sm text-slate-500">Baik</p>
+          <p className="text-sm text-slate-700">Baik</p>
           <p className="text-3xl font-bold text-emerald-600 mt-1">
             {tandaTerima.filter(t => t.kondisi === 'Baik').length}
           </p>
-          <p className="text-xs text-slate-400 mt-1">box</p>
+          <p className="text-xs text-slate-600 mt-1">box</p>
         </div>
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-          <p className="text-sm text-slate-500">Rusak</p>
+          <p className="text-sm text-slate-700">Rusak</p>
           <p className="text-3xl font-bold text-red-600 mt-1">
             {tandaTerima.filter(t => t.kondisi === 'Rusak').length}
           </p>
-          <p className="text-xs text-slate-400 mt-1">box</p>
+          <p className="text-xs text-slate-600 mt-1">box</p>
         </div>
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-          <p className="text-sm text-slate-500">Total Box Diterima</p>
+          <p className="text-sm text-slate-700">Total Box Diterima</p>
           <p className="text-3xl font-bold text-teal-600 mt-1">
             {tandaTerima.reduce((sum, t) => sum + t.jumlahBoxDiterima, 0)}
           </p>
-          <p className="text-xs text-slate-400 mt-1">box hari ini</p>
+          <p className="text-xs text-slate-600 mt-1">box hari ini</p>
         </div>
       </div>
 
@@ -157,7 +157,7 @@ export default function TandaTerimaPage() {
             <tbody>
               {tandaTerima.length === 0 ? (
                 <tr>
-                  <td colSpan={8} className="py-8 text-center text-slate-400">
+                  <td colSpan={8} className="py-8 text-center text-slate-600">
                     <span className="text-3xl">📋</span>
                     <p className="mt-2">Belum ada data tanda terima</p>
                   </td>
@@ -165,7 +165,7 @@ export default function TandaTerimaPage() {
               ) : (
                 tandaTerima.map((tt, idx) => (
                   <tr key={tt.id} className="border-b border-gray-100 hover:bg-gray-50">
-                    <td className="py-3 px-4 text-slate-500">{idx + 1}</td>
+                    <td className="py-3 px-4 text-slate-700">{idx + 1}</td>
                     <td className="py-3 px-4 font-medium text-slate-800">{tt.namaPenerima}</td>
                     <td className="py-3 px-4 text-slate-600">{tt.ruteId}</td>
                     <td className="py-3 px-4 text-slate-600">{tt.jumlahBoxDikirim}</td>
@@ -196,34 +196,34 @@ export default function TandaTerimaPage() {
         <h2 className="font-semibold text-slate-800 mb-4">Template Tanda Terima</h2>
         <div className="bg-gray-50 rounded-xl border border-gray-200 p-6">
           <div className="text-center mb-6">
-            <p className="text-xs text-slate-500 uppercase tracking-wider">TANDA TERIMA</p>
+            <p className="text-xs text-slate-700 uppercase tracking-wider">TANDA TERIMA</p>
             <p className="text-lg font-bold text-slate-800 mt-1">Program Makan Bergizi Gratis (MBG)</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
             <div>
-              <p className="text-slate-500 mb-1">Nama Penerima:</p>
+              <p className="text-slate-700 mb-1">Nama Penerima:</p>
               <p className="font-medium text-slate-800 border-b border-gray-300 pb-1">_______________________</p>
             </div>
             <div>
-              <p className="text-slate-500 mb-1">Jabatan:</p>
+              <p className="text-slate-700 mb-1">Jabatan:</p>
               <p className="font-medium text-slate-800 border-b border-gray-300 pb-1">_______________________</p>
             </div>
             <div>
-              <p className="text-slate-500 mb-1">Jumlah Box Diterima:</p>
+              <p className="text-slate-700 mb-1">Jumlah Box Diterima:</p>
               <p className="font-medium text-slate-800 border-b border-gray-300 pb-1">___________ box</p>
             </div>
             <div>
-              <p className="text-slate-500 mb-1">Kondisi Makanan:</p>
+              <p className="text-slate-700 mb-1">Kondisi Makanan:</p>
               <p className="font-medium text-slate-800 border-b border-gray-300 pb-1">___________</p>
             </div>
           </div>
           <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="text-center">
-              <p className="text-sm text-slate-500 mb-8">Pemberi Layanan</p>
+              <p className="text-sm text-slate-700 mb-8">Pemberi Layanan</p>
               <p className="font-medium text-slate-800 border-t border-gray-300 pt-2">_______________________</p>
             </div>
             <div className="text-center">
-              <p className="text-sm text-slate-500 mb-8">Penerima</p>
+              <p className="text-sm text-slate-700 mb-8">Penerima</p>
               <p className="font-medium text-slate-800 border-t border-gray-300 pt-2">_______________________</p>
             </div>
           </div>

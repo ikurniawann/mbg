@@ -132,7 +132,7 @@ export default function AuditPage() {
     <div className="p-6">
       <header className="mb-6">
         <h1 className="text-2xl font-bold text-slate-800">Audit Trail</h1>
-        <p className="text-sm text-slate-500">
+        <p className="text-sm text-slate-700">
           {filteredAudit.length} dari {DUMMY_AUDIT.length} aktivitas
         </p>
       </header>
@@ -208,7 +208,7 @@ export default function AuditPage() {
         <div className="overflow-x-auto">
           <div className="divide-y divide-gray-100">
           {filteredAudit.length === 0 ? (
-            <div className="py-12 text-center text-slate-400">
+            <div className="py-12 text-center text-slate-600">
               <span className="text-4xl">📋</span>
               <p className="mt-2">Tidak ada aktivitas yang sesuai filter</p>
             </div>
@@ -236,7 +236,7 @@ export default function AuditPage() {
                             <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${config.color}`}>
                               {config.label}
                             </span>
-                            <span className="text-xs text-slate-400">{entry.modul}</span>
+                            <span className="text-xs text-slate-600">{entry.modul}</span>
                           </div>
                           <p className="text-sm text-slate-700 mt-1">{entry.detail}</p>
 
@@ -245,7 +245,7 @@ export default function AuditPage() {
                               <span className="bg-red-50 text-red-600 px-2 py-0.5 rounded">
                                 Before: {entry.before}
                               </span>
-                              <span className="text-slate-400">→</span>
+                              <span className="text-slate-600">→</span>
                               <span className="bg-emerald-50 text-emerald-600 px-2 py-0.5 rounded">
                                 After: {entry.after}
                               </span>
@@ -253,8 +253,8 @@ export default function AuditPage() {
                           )}
                         </div>
                         <div className="text-right shrink-0">
-                          <p className="text-xs text-slate-500">{entry.timestamp}</p>
-                          <p className="text-xs text-slate-400 mt-0.5">{entry.user}</p>
+                          <p className="text-xs text-slate-700">{entry.timestamp}</p>
+                          <p className="text-xs text-slate-600 mt-0.5">{entry.user}</p>
                         </div>
                       </div>
                     </div>

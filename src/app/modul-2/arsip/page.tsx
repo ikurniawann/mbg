@@ -80,28 +80,28 @@ export default function ArsipPage() {
       <header className="flex items-center justify-between mb-6">
         <div>
           <h1 className="text-2xl font-bold text-slate-800">Arsip Revisi Menu</h1>
-          <p className="text-sm text-slate-500">{DUMMY_REVISI.length} revisi tercatat</p>
+          <p className="text-sm text-slate-700">{DUMMY_REVISI.length} revisi tercatat</p>
         </div>
       </header>
 
       {/* Stats */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-          <p className="text-sm text-slate-500">Total Revisi</p>
+          <p className="text-sm text-slate-700">Total Revisi</p>
           <p className="text-3xl font-bold text-slate-800 mt-1">{DUMMY_REVISI.length}</p>
-          <p className="text-xs text-slate-400 mt-1">bulan ini</p>
+          <p className="text-xs text-slate-600 mt-1">bulan ini</p>
         </div>
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-          <p className="text-sm text-slate-500">Disetujui</p>
+          <p className="text-sm text-slate-700">Disetujui</p>
           <p className="text-3xl font-bold text-emerald-600 mt-1">
             {DUMMY_REVISI.filter(r => r.status === 'Disetujui').length}
           </p>
-          <p className="text-xs text-slate-400 mt-1">revisi</p>
+          <p className="text-xs text-slate-600 mt-1">revisi</p>
         </div>
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-          <p className="text-sm text-slate-500">Paling Sering Diganti</p>
+          <p className="text-sm text-slate-700">Paling Sering Diganti</p>
           <p className="text-lg font-bold text-red-600 mt-1">Ikan Goreng</p>
-          <p className="text-xs text-slate-400 mt-1">3 kali penggantian</p>
+          <p className="text-xs text-slate-600 mt-1">3 kali penggantian</p>
         </div>
       </div>
 
@@ -122,19 +122,19 @@ export default function ArsipPage() {
           <table className="w-full">
             <thead className="bg-slate-50 border-b">
               <tr>
-                <th className="text-left px-6 py-3 text-xs font-semibold text-slate-500 uppercase">Tanggal</th>
-                <th className="text-left px-6 py-3 text-xs font-semibold text-slate-500 uppercase">Menu Awal</th>
-                <th className="text-left px-6 py-3 text-xs font-semibold text-slate-500 uppercase">Menu Revisi</th>
-                <th className="text-left px-6 py-3 text-xs font-semibold text-slate-500 uppercase">Alasan</th>
-                <th className="text-left px-6 py-3 text-xs font-semibold text-slate-500 uppercase">User</th>
-                <th className="text-left px-6 py-3 text-xs font-semibold text-slate-500 uppercase">Status</th>
-                <th className="text-left px-6 py-3 text-xs font-semibold text-slate-500 uppercase"></th>
+                <th className="text-left px-6 py-3 text-xs font-semibold text-slate-700 uppercase">Tanggal</th>
+                <th className="text-left px-6 py-3 text-xs font-semibold text-slate-700 uppercase">Menu Awal</th>
+                <th className="text-left px-6 py-3 text-xs font-semibold text-slate-700 uppercase">Menu Revisi</th>
+                <th className="text-left px-6 py-3 text-xs font-semibold text-slate-700 uppercase">Alasan</th>
+                <th className="text-left px-6 py-3 text-xs font-semibold text-slate-700 uppercase">User</th>
+                <th className="text-left px-6 py-3 text-xs font-semibold text-slate-700 uppercase">Status</th>
+                <th className="text-left px-6 py-3 text-xs font-semibold text-slate-700 uppercase"></th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-100">
               {filtered.length === 0 ? (
                 <tr>
-                  <td colSpan={7} className="px-6 py-12 text-center text-slate-400">
+                  <td colSpan={7} className="px-6 py-12 text-center text-slate-600">
                     Tidak ada hasil pencarian
                   </td>
                 </tr>
@@ -143,7 +143,7 @@ export default function ArsipPage() {
                   <tr key={rev.id} className="hover:bg-gray-50">
                     <td className="px-6 py-4 text-sm text-slate-600">{rev.tanggal}</td>
                     <td className="px-6 py-4">
-                      <p className="text-sm text-slate-400 line-through">{rev.menuAwal}</p>
+                      <p className="text-sm text-slate-600 line-through">{rev.menuAwal}</p>
                     </td>
                     <td className="px-6 py-4">
                       <p className="text-sm font-medium text-slate-800">→ {rev.menuRevisi}</p>
@@ -154,7 +154,7 @@ export default function ArsipPage() {
                     <td className="px-6 py-4">
                       <p className="text-sm text-slate-700">{rev.user}</p>
                       {rev.approvedBy && (
-                        <p className="text-xs text-slate-400">Aprv: {rev.approvedBy}</p>
+                        <p className="text-xs text-slate-600">Aprv: {rev.approvedBy}</p>
                       )}
                     </td>
                     <td className="px-6 py-4">
@@ -190,20 +190,20 @@ export default function ArsipPage() {
               <h3 className="font-bold text-lg text-slate-800">Detail Revisi</h3>
               <button
                 onClick={() => setSelectedRev(null)}
-                className="text-slate-400 hover:text-slate-600 text-xl"
+                className="text-slate-600 hover:text-slate-600 text-xl"
               >
                 ✕
               </button>
             </div>
 
             <div className="space-y-4">
-              <div className="grid grid-cols-2 gap-4 text-sm">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
                 <div>
-                  <p className="text-slate-500">ID Revisi</p>
+                  <p className="text-slate-700">ID Revisi</p>
                   <p className="font-mono font-semibold">{selectedRev.id}</p>
                 </div>
                 <div>
-                  <p className="text-slate-500">Tanggal</p>
+                  <p className="text-slate-700">Tanggal</p>
                   <p className="font-semibold">{selectedRev.tanggal}</p>
                 </div>
               </div>
@@ -214,7 +214,7 @@ export default function ArsipPage() {
               </div>
 
               <div className="flex justify-center">
-                <span className="text-2xl text-slate-400">↓</span>
+                <span className="text-2xl text-slate-600">↓</span>
               </div>
 
               <div className="p-4 bg-emerald-50 rounded-xl border border-emerald-200">
@@ -223,23 +223,23 @@ export default function ArsipPage() {
               </div>
 
               <div className="p-4 bg-slate-50 rounded-xl">
-                <p className="text-xs text-slate-500 font-medium mb-1">ALASAN REVISI</p>
+                <p className="text-xs text-slate-700 font-medium mb-1">ALASAN REVISI</p>
                 <p className="text-sm text-slate-700">{selectedRev.alasan}</p>
               </div>
 
-              <div className="grid grid-cols-2 gap-4 text-sm">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
                 <div>
-                  <p className="text-slate-500">Diminta oleh</p>
+                  <p className="text-slate-700">Diminta oleh</p>
                   <p className="font-semibold">{selectedRev.user}</p>
                 </div>
                 <div>
-                  <p className="text-slate-500">Disetujui oleh</p>
+                  <p className="text-slate-700">Disetujui oleh</p>
                   <p className="font-semibold">{selectedRev.approvedBy || '-'}</p>
                 </div>
               </div>
 
               <div>
-                <p className="text-slate-500 text-sm">Status</p>
+                <p className="text-slate-700 text-sm">Status</p>
                 <span className={`inline-block mt-1 text-xs px-3 py-1 rounded-full font-medium ${
                   selectedRev.status === 'Disetujui'
                     ? 'bg-emerald-100 text-emerald-700'

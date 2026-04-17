@@ -23,7 +23,7 @@ export default function PelatihanPage() {
       <header className="flex items-center justify-between mb-6">
         <div>
           <h1 className="text-2xl font-bold text-slate-800">Pelatihan & Pengembangan</h1>
-          <p className="text-sm text-slate-500 mt-1">Kelola jadwal dan materi pelatihan staf</p>
+          <p className="text-sm text-slate-700 mt-1">Kelola jadwal dan materi pelatihan staf</p>
         </div>
         <button className="px-4 py-2 bg-indigo-600 text-white rounded-lg text-sm font-medium hover:bg-indigo-700 transition">
           + Tambah Pelatihan
@@ -67,21 +67,21 @@ export default function PelatihanPage() {
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
                 <div className="bg-white/50 rounded-lg p-3">
-                  <p className="text-xs text-slate-500">Tanggal</p>
+                  <p className="text-xs text-slate-700">Tanggal</p>
                   <p className="font-semibold text-slate-800">📅 {p.tanggal}</p>
                 </div>
                 <div className="bg-white/50 rounded-lg p-3">
-                  <p className="text-xs text-slate-500">Pemateri</p>
+                  <p className="text-xs text-slate-700">Pemateri</p>
                   <p className="font-semibold text-slate-800">👨‍🏫 {p.pemateri}</p>
                 </div>
                 <div className="bg-white/50 rounded-lg p-3">
-                  <p className="text-xs text-slate-500">Jumlah Peserta</p>
+                  <p className="text-xs text-slate-700">Jumlah Peserta</p>
                   <p className="font-semibold text-slate-800">👥 {p.peserta.length} orang</p>
                 </div>
               </div>
 
               <div className="mt-4">
-                <p className="text-xs text-slate-500 mb-2">Peserta:</p>
+                <p className="text-xs text-slate-700 mb-2">Peserta:</p>
                 <div className="flex flex-wrap gap-2">
                   {p.peserta.map((nama, idx) => (
                     <span key={idx} className="text-xs bg-white px-3 py-1 rounded-full border border-gray-300 font-medium">

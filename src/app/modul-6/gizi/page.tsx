@@ -21,7 +21,7 @@ export default function GiziPage() {
       <header className="flex items-center justify-between mb-6">
         <div>
           <h1 className="text-2xl font-bold text-slate-800">Ringkasan Gizi</h1>
-          <p className="text-sm text-slate-500 mt-1">
+          <p className="text-sm text-slate-700 mt-1">
             Reportasi Gizi Bulanan — {MONTH_NAMES[lpj.bulan]} {lpj.tahun}
           </p>
         </div>
@@ -41,7 +41,7 @@ export default function GiziPage() {
           CARBS_Adequate ? 'bg-emerald-50 border-emerald-300' : 'bg-amber-50 border-amber-300'
         }`}>
           <div className="flex items-center justify-between mb-3">
-            <p className="text-sm font-medium text-slate-500">Karbohidrat</p>
+            <p className="text-sm font-medium text-slate-700">Karbohidrat</p>
             <span className="text-2xl">🍚</span>
           </div>
           <p className={`text-4xl font-black ${
@@ -49,7 +49,7 @@ export default function GiziPage() {
           }`}>
             {gizi.karbohidrat}g
           </p>
-          <p className="text-xs mt-2 text-slate-500">
+          <p className="text-xs mt-2 text-slate-700">
             {CARBS_Adequate ? '✓ Dalam standar (300-400g)' : '⚠️ Di luar standar'}
           </p>
         </div>
@@ -58,7 +58,7 @@ export default function GiziPage() {
           PROTEIN_Adequate ? 'bg-emerald-50 border-emerald-300' : 'bg-amber-50 border-amber-300'
         }`}>
           <div className="flex items-center justify-between mb-3">
-            <p className="text-sm font-medium text-slate-500">Protein</p>
+            <p className="text-sm font-medium text-slate-700">Protein</p>
             <span className="text-2xl">🥩</span>
           </div>
           <p className={`text-4xl font-black ${
@@ -66,7 +66,7 @@ export default function GiziPage() {
           }`}>
             {gizi.protein}g
           </p>
-          <p className="text-xs mt-2 text-slate-500">
+          <p className="text-xs mt-2 text-slate-700">
             {PROTEIN_Adequate ? '✓ Dalam standar (150-200g)' : '⚠️ Di luar standar'}
           </p>
         </div>
@@ -75,7 +75,7 @@ export default function GiziPage() {
           LEMAK_Adequate ? 'bg-emerald-50 border-emerald-300' : 'bg-amber-50 border-amber-300'
         }`}>
           <div className="flex items-center justify-between mb-3">
-            <p className="text-sm font-medium text-slate-500">Lemak</p>
+            <p className="text-sm font-medium text-slate-700">Lemak</p>
             <span className="text-2xl">🫒</span>
           </div>
           <p className={`text-4xl font-black ${
@@ -83,20 +83,20 @@ export default function GiziPage() {
           }`}>
             {gizi.lemak}g
           </p>
-          <p className="text-xs mt-2 text-slate-500">
+          <p className="text-xs mt-2 text-slate-700">
             {LEMAK_Adequate ? '✓ Dalam standar (60-100g)' : '⚠️ Di luar standar'}
           </p>
         </div>
 
         <div className="bg-violet-50 rounded-xl p-5 border-2 border-violet-300">
           <div className="flex items-center justify-between mb-3">
-            <p className="text-sm font-medium text-slate-500">Total Porsi</p>
+            <p className="text-sm font-medium text-slate-700">Total Porsi</p>
             <span className="text-2xl">🍽️</span>
           </div>
           <p className="text-4xl font-black text-violet-700">
             {lpj.ringkasan.totalPorsi.toLocaleString('id-ID')}
           </p>
-          <p className="text-xs mt-2 text-slate-500">porsi bulan ini</p>
+          <p className="text-xs mt-2 text-slate-700">porsi bulan ini</p>
         </div>
       </div>
 

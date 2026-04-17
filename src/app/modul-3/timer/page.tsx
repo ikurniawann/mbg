@@ -52,7 +52,7 @@ export default function TimerPage() {
     <div className="p-6">
       <header className="mb-6">
         <h1 className="text-2xl font-bold text-slate-800">Timer Produksi</h1>
-        <p className="text-sm text-slate-500">
+        <p className="text-sm text-slate-700">
           Batas maksimal masak → packing → distribusi: <strong>4 jam</strong>
         </p>
       </header>
@@ -104,7 +104,7 @@ export default function TimerPage() {
               }`}>
                 {formatTime(elapsed)}
               </p>
-              <p className="text-sm text-slate-500 mt-1">
+              <p className="text-sm text-slate-700 mt-1">
                 {status === 'alert' ? 'MELEBIHI BATAS!' : `Sisa: ${formatTime(remainingSeconds)}`}
               </p>
             </div>
@@ -112,7 +112,7 @@ export default function TimerPage() {
 
           {/* Progress Bar */}
           <div className="w-full max-w-md">
-            <div className="flex justify-between text-xs text-slate-500 mb-1">
+            <div className="flex justify-between text-xs text-slate-700 mb-1">
               <span>0:00</span>
               <span>2:00</span>
               <span className="text-amber-600 font-medium">3:30 (Waspada)</span>
@@ -146,7 +146,7 @@ export default function TimerPage() {
 
           {/* Timeline */}
           <div className="mt-8 w-full max-w-lg">
-            <p className="text-xs text-slate-500 mb-3 font-medium uppercase tracking-wide">Timeline Produksi</p>
+            <p className="text-xs text-slate-700 mb-3 font-medium uppercase tracking-wide">Timeline Produksi</p>
             <div className="relative">
               <div className="absolute top-4 left-0 right-0 h-1 bg-gray-200 rounded" />
               <div
@@ -162,15 +162,15 @@ export default function TimerPage() {
               ].map((item, idx) => (
                 <div key={idx} className="relative flex items-center mb-4">
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold z-10 ${
-                    item.done ? 'bg-emerald-500 text-white' : 'bg-gray-200 text-gray-400'
+                    item.done ? 'bg-emerald-500 text-white' : 'bg-gray-200 text-gray-600'
                   }`}>
                     {item.done ? '✓' : idx + 1}
                   </div>
                   <div className="ml-3">
-                    <p className={`text-sm font-medium ${item.done ? 'text-emerald-700' : 'text-slate-400'}`}>
+                    <p className={`text-sm font-medium ${item.done ? 'text-emerald-700' : 'text-slate-600'}`}>
                       {item.label}
                     </p>
-                    <p className="text-xs text-slate-400">{item.time}</p>
+                    <p className="text-xs text-slate-600">{item.time}</p>
                   </div>
                 </div>
               ))}
@@ -180,7 +180,7 @@ export default function TimerPage() {
 
         {/* Footer */}
         <div className="px-6 py-4 bg-slate-50 border-t border-gray-200 flex items-center justify-between">
-          <div className="text-sm text-slate-500">
+          <div className="text-sm text-slate-700">
             <p>Mulai: 06:00 WIB · Tanggal: 17 April 2026</p>
           </div>
           <button

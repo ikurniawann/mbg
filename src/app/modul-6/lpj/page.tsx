@@ -43,7 +43,7 @@ export default function LPJPage() {
           <h1 className="text-2xl font-bold text-slate-800">
             LPJ Bulanan — {MONTH_NAMES[lpj.bulan]} {lpj.tahun}
           </h1>
-          <p className="text-sm text-slate-500 mt-1">
+          <p className="text-sm text-slate-700 mt-1">
             Laporan Pertanggungjawaban Bulanan Program Makan Bergizi Gratis
           </p>
         </div>
@@ -80,25 +80,25 @@ export default function LPJPage() {
           {/* Stats */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-              <p className="text-sm text-slate-500">Total Porsi</p>
+              <p className="text-sm text-slate-700">Total Porsi</p>
               <p className="text-4xl font-black text-violet-600 mt-1">
                 {lpj.ringkasan.totalPorsi.toLocaleString('id-ID')}
               </p>
-              <p className="text-xs text-slate-400 mt-2">porsi terealisasi bulan ini</p>
+              <p className="text-xs text-slate-600 mt-2">porsi terealisasi bulan ini</p>
             </div>
             <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-              <p className="text-sm text-slate-500">Total Bahan</p>
+              <p className="text-sm text-slate-700">Total Bahan</p>
               <p className="text-4xl font-black text-blue-600 mt-1">
                 {lpj.ringkasan.totalBahan.toLocaleString('id-ID')}
               </p>
-              <p className="text-xs text-slate-400 mt-2">item bahan digunakan</p>
+              <p className="text-xs text-slate-600 mt-2">item bahan digunakan</p>
             </div>
             <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-              <p className="text-sm text-slate-500">Total Distribusi</p>
+              <p className="text-sm text-slate-700">Total Distribusi</p>
               <p className="text-4xl font-black text-emerald-600 mt-1">
                 {lpj.ringkasan.totalDistribusi.toLocaleString('id-ID')}
               </p>
-              <p className="text-xs text-slate-400 mt-2">rute distribusi dilakukan</p>
+              <p className="text-xs text-slate-600 mt-2">rute distribusi dilakukan</p>
             </div>
           </div>
 
@@ -142,10 +142,10 @@ export default function LPJPage() {
                     </div>
                     <div>
                       <p className="font-semibold text-slate-700">{doc.kategori}</p>
-                      <p className="text-xs text-slate-500">{doc.foto.length} foto</p>
+                      <p className="text-xs text-slate-700">{doc.foto.length} foto</p>
                     </div>
                   </div>
-                  <div className="grid grid-cols-2 gap-2">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {doc.foto.map((f, fidx) => (
                       <div key={fidx} className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-20 flex items-center justify-center text-xs text-gray-500">
                         📷 {f.split('/').pop()}
@@ -275,7 +275,7 @@ export default function LPJPage() {
                         </p>
                         <p className={`text-sm mt-1 ${
                           step.status === 'Approved' ? 'text-emerald-600' :
-                          step.status === 'Rejected' ? 'text-red-600' : 'text-slate-500'
+                          step.status === 'Rejected' ? 'text-red-600' : 'text-slate-700'
                         }`}>
                           {step.status === 'Approved'
                             ? `✓ Disetujui oleh ${step.approvedBy}`
@@ -284,7 +284,7 @@ export default function LPJPage() {
                             : '⏳ Menunggu persetujuan'}
                         </p>
                         {step.approvedAt && (
-                          <p className="text-xs text-slate-400 mt-1">Waktu: {step.approvedAt}</p>
+                          <p className="text-xs text-slate-600 mt-1">Waktu: {step.approvedAt}</p>
                         )}
                       </div>
                       <span className={`px-3 py-1 rounded-full text-xs font-bold ${

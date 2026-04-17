@@ -61,7 +61,7 @@ export default function HealthCheckPage() {
         <div>
           <h1 className="text-2xl font-bold text-slate-800">Health Check Staf Harian</h1>
           <div className="flex items-center gap-3 mt-1">
-            <p className="text-sm text-slate-500">Selasa, 17 April 2026</p>
+            <p className="text-sm text-slate-700">Selasa, 17 April 2026</p>
             <span className="px-2 py-0.5 bg-red-100 text-red-700 rounded text-xs font-medium border border-red-300">
               🇮🇩 SK BGN No. 244/2025 & 63421/2026
             </span>
@@ -111,28 +111,28 @@ export default function HealthCheckPage() {
       {/* Stats Row */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-          <p className="text-sm text-slate-500">Total Staf</p>
+          <p className="text-sm text-slate-700">Total Staf</p>
           <p className="text-3xl font-bold text-slate-800 mt-1">{healthChecks.length}</p>
-          <p className="text-xs text-slate-400 mt-1">staf aktif</p>
+          <p className="text-xs text-slate-600 mt-1">staf aktif</p>
         </div>
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-          <p className="text-sm text-slate-500">Sehat & APD Lengkap</p>
+          <p className="text-sm text-slate-700">Sehat & APD Lengkap</p>
           <p className="text-3xl font-bold text-emerald-600 mt-1">{allApdComplete}</p>
-          <p className="text-xs text-slate-400 mt-1">staf boleh bertugas</p>
+          <p className="text-xs text-slate-600 mt-1">staf boleh bertugas</p>
         </div>
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-          <p className="text-sm text-slate-500">Tidak Sehat</p>
+          <p className="text-sm text-slate-700">Tidak Sehat</p>
           <p className="text-3xl font-bold text-red-600 mt-1">
             {healthChecks.filter(h => h.kondisi !== 'Sehat').length}
           </p>
-          <p className="text-xs text-slate-400 mt-1">staf tidak boleh bertugas</p>
+          <p className="text-xs text-slate-600 mt-1">staf tidak boleh bertugas</p>
         </div>
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-          <p className="text-sm text-slate-500">APD Tidak Lengkap</p>
+          <p className="text-sm text-slate-700">APD Tidak Lengkap</p>
           <p className="text-3xl font-bold text-amber-600 mt-1">
             {healthChecks.filter(h => !h.apdLengkap).length}
           </p>
-          <p className="text-xs text-slate-400 mt-1">staf perlu dilengkapi</p>
+          <p className="text-xs text-slate-600 mt-1">staf perlu dilengkapi</p>
         </div>
       </div>
 
@@ -144,7 +144,7 @@ export default function HealthCheckPage() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="text-left text-slate-500 border-b border-gray-100">
+                  <tr className="text-left text-slate-700 border-b border-gray-100">
                     <th className="pb-3 font-medium">Nama</th>
                     <th className="pb-3 font-medium">Kondisi</th>
                     <th className="pb-3 font-medium">Suhu</th>
@@ -225,14 +225,14 @@ export default function HealthCheckPage() {
                       style={{ height: `${(d.tidakSehat / 8) * 100}px` }}
                     />
                   </div>
-                  <span className={`text-xs font-medium ${d.day === 'Today' ? 'text-blue-600' : 'text-slate-500'}`}>
+                  <span className={`text-xs font-medium ${d.day === 'Today' ? 'text-blue-600' : 'text-slate-700'}`}>
                     {d.day}
                   </span>
-                  <span className="text-[10px] text-slate-400">{d.sehat}/{d.sehat + d.tidakSehat}</span>
+                  <span className="text-[10px] text-slate-600">{d.sehat}/{d.sehat + d.tidakSehat}</span>
                 </div>
               ))}
             </div>
-            <div className="mt-3 flex items-center justify-center gap-6 text-xs text-slate-500">
+            <div className="mt-3 flex items-center justify-center gap-6 text-xs text-slate-700">
               <span className="flex items-center gap-1">
                 <div className="w-3 h-3 bg-emerald-400 rounded" /> Sehat
               </span>
@@ -315,7 +315,7 @@ export default function HealthCheckPage() {
                         ? k === 'Sehat'
                           ? 'border-emerald-500 bg-emerald-50 text-emerald-700'
                           : 'border-red-500 bg-red-50 text-red-700'
-                        : 'border-gray-200 text-slate-400 hover:border-gray-300'
+                        : 'border-gray-200 text-slate-600 hover:border-gray-300'
                     }`}
                   >
                     {k}
@@ -338,7 +338,7 @@ export default function HealthCheckPage() {
                     className={`px-3 py-1.5 rounded-lg text-xs font-medium border-2 transition ${
                       form.gejala.includes(g)
                         ? 'border-red-400 bg-red-50 text-red-700'
-                        : 'border-gray-200 text-slate-500 hover:border-gray-300'
+                        : 'border-gray-200 text-slate-700 hover:border-gray-300'
                     }`}
                   >
                     {g}
@@ -392,7 +392,7 @@ export default function HealthCheckPage() {
           </div>
 
           <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-            <p className="text-xs text-slate-400">
+            <p className="text-xs text-slate-600">
               {new Date().toLocaleString('id-ID')}
             </p>
             <div className="flex gap-2">

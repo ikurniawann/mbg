@@ -92,7 +92,7 @@ export default function Modul7Layout({ children }: { children: React.ReactNode }
           </button>
           <div>
             <h1 className="font-bold text-slate-800">SDM & Pelatihan</h1>
-            <p className="text-xs text-slate-500">Modul 7</p>
+            <p className="text-xs text-slate-700">Modul 7</p>
           </div>
         </header>
 

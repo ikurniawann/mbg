@@ -60,7 +60,7 @@ export default function NotulenPage() {
       <header className="flex items-center justify-between mb-6">
         <div>
           <h1 className="text-2xl font-bold text-slate-800">Notulen Rapat</h1>
-          <p className="text-sm text-slate-500 mt-1">Dokumentasi rapat dan keputusan</p>
+          <p className="text-sm text-slate-700 mt-1">Dokumentasi rapat dan keputusan</p>
         </div>
         <button className="px-4 py-2 bg-indigo-600 text-white rounded-lg text-sm font-medium hover:bg-indigo-700 transition">
           + Buat Notulen Baru
@@ -83,8 +83,8 @@ export default function NotulenPage() {
                 }`}
               >
                 <p className="font-semibold text-slate-800 text-sm">{n.agenda}</p>
-                <p className="text-xs text-slate-500 mt-1">📅 {n.tanggal}</p>
-                <p className="text-xs text-slate-400 mt-1">{n.daftarHadir.length} peserta hadir</p>
+                <p className="text-xs text-slate-700 mt-1">📅 {n.tanggal}</p>
+                <p className="text-xs text-slate-600 mt-1">{n.daftarHadir.length} peserta hadir</p>
               </button>
             ))}
           </div>
@@ -135,10 +135,10 @@ export default function NotulenPage() {
                 <div key={idx} className="flex items-center justify-between p-3 bg-white/70 rounded-lg border border-amber-200">
                   <div>
                     <p className="font-medium text-slate-800">{tl.action}</p>
-                    <p className="text-xs text-slate-500 mt-1">👤 {tl.pic}</p>
+                    <p className="text-xs text-slate-700 mt-1">👤 {tl.pic}</p>
                   </div>
                   <div className="text-right">
-                    <p className="text-xs text-slate-500">Deadline</p>
+                    <p className="text-xs text-slate-700">Deadline</p>
                     <p className="text-sm font-semibold text-amber-700">{tl.deadline}</p>
                   </div>
                 </div>

@@ -17,7 +17,7 @@ export default function Modul7Dashboard() {
         <div>
           <h1 className="text-2xl font-bold text-slate-800">Dashboard SDM & Pelatihan</h1>
           <div className="flex items-center gap-3 mt-1">
-            <p className="text-sm text-slate-500">Selasa, 17 April 2026</p>
+            <p className="text-sm text-slate-700">Selasa, 17 April 2026</p>
             <span className="px-2 py-0.5 bg-indigo-100 text-indigo-700 rounded text-xs font-medium border border-indigo-300">
               👥 SDM & Pelatihan
             </span>
@@ -36,24 +36,24 @@ export default function Modul7Dashboard() {
       {/* Staff Overview */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-          <p className="text-sm text-slate-500">Total Staf</p>
+          <p className="text-sm text-slate-700">Total Staf</p>
           <p className="text-3xl font-bold text-indigo-600 mt-1">{dummyUsers.length}</p>
-          <p className="text-xs text-slate-400 mt-1">personel aktif</p>
+          <p className="text-xs text-slate-600 mt-1">personel aktif</p>
         </div>
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-          <p className="text-sm text-slate-500">Pelatihan Terjadwal</p>
+          <p className="text-sm text-slate-700">Pelatihan Terjadwal</p>
           <p className="text-3xl font-bold text-blue-600 mt-1">{scheduledCount}</p>
-          <p className="text-xs text-slate-400 mt-1">pelatihan akan datang</p>
+          <p className="text-xs text-slate-600 mt-1">pelatihan akan datang</p>
         </div>
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-          <p className="text-sm text-slate-500">Pelatihan Selesai</p>
+          <p className="text-sm text-slate-700">Pelatihan Selesai</p>
           <p className="text-3xl font-bold text-emerald-600 mt-1">{completedCount}</p>
-          <p className="text-xs text-slate-400 mt-1">total pelatihan</p>
+          <p className="text-xs text-slate-600 mt-1">total pelatihan</p>
         </div>
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-          <p className="text-sm text-slate-500">Rating Rata-rata</p>
+          <p className="text-sm text-slate-700">Rating Rata-rata</p>
           <p className="text-3xl font-bold text-amber-500 mt-1">{avgRating}</p>
-          <p className="text-xs text-slate-400 mt-1">dari feedback penerima</p>
+          <p className="text-xs text-slate-600 mt-1">dari feedback penerima</p>
         </div>
       </div>
 
@@ -66,7 +66,7 @@ export default function Modul7Dashboard() {
             </div>
             <div>
               <h3 className="font-semibold text-slate-800">Pelatihan & Pengembangan</h3>
-              <p className="text-sm text-slate-500 mt-1">Kelola jadwal pelatihan staf</p>
+              <p className="text-sm text-slate-700 mt-1">Kelola jadwal pelatihan staf</p>
             </div>
           </div>
         </Link>
@@ -78,7 +78,7 @@ export default function Modul7Dashboard() {
             </div>
             <div>
               <h3 className="font-semibold text-slate-800">Notulen Rapat</h3>
-              <p className="text-sm text-slate-500 mt-1">Dokumentasi keputusan rapat</p>
+              <p className="text-sm text-slate-700 mt-1">Dokumentasi keputusan rapat</p>
             </div>
           </div>
         </Link>
@@ -90,7 +90,7 @@ export default function Modul7Dashboard() {
             </div>
             <div>
               <h3 className="font-semibold text-slate-800">Feedback Penerima</h3>
-              <p className="text-sm text-slate-500 mt-1">Lihat rating & komentar</p>
+              <p className="text-sm text-slate-700 mt-1">Lihat rating & komentar</p>
             </div>
           </div>
         </Link>
@@ -112,7 +112,7 @@ export default function Modul7Dashboard() {
                 <div className="flex items-start justify-between">
                   <div>
                     <p className="font-semibold text-slate-800">{p.judul}</p>
-                    <p className="text-xs text-slate-500 mt-1">
+                    <p className="text-xs text-slate-700 mt-1">
                       📅 {p.tanggal} • Pemateri: {p.pemateri}
                     </p>
                   </div>
@@ -122,7 +122,7 @@ export default function Modul7Dashboard() {
                 </div>
                 <p className="text-sm text-slate-600 mt-2">Materi: {p.materi}</p>
                 <div className="flex items-center gap-2 mt-2">
-                  <span className="text-xs text-slate-500">Peserta:</span>
+                  <span className="text-xs text-slate-700">Peserta:</span>
                   {p.peserta.map((nama, idx) => (
                     <span key={idx} className="text-xs bg-white px-2 py-0.5 rounded border border-indigo-200">
                       {nama}
@@ -132,7 +132,7 @@ export default function Modul7Dashboard() {
               </div>
             ))}
             {pelatihan.filter(p => p.status === 'Terjadwal').length === 0 && (
-              <p className="text-sm text-slate-500 text-center py-4">Tidak ada pelatihan terjadwal</p>
+              <p className="text-sm text-slate-700 text-center py-4">Tidak ada pelatihan terjadwal</p>
             )}
           </div>
         </div>
@@ -151,11 +151,11 @@ export default function Modul7Dashboard() {
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="font-semibold text-slate-800">{fb.lokasi}</p>
-                    <p className="text-xs text-slate-500 mt-1">📅 {fb.tanggal}</p>
+                    <p className="text-xs text-slate-700 mt-1">📅 {fb.tanggal}</p>
                   </div>
                   <div className="flex items-center gap-1 text-amber-500">
                     {Array.from({ length: 5 }).map((_, i) => (
-                      <span key={i} className={i < Math.round((fb.rating.rasa + fb.rating.kebersihan + fb.rating.ketepatanWaktu) / 3) ? 'text-amber-400' : 'text-gray-300'}>
+                      <span key={i} className={i < Math.round((fb.rating.rasa + fb.rating.kebersihan + fb.rating.ketepatanWaktu) / 3) ? 'text-amber-400' : 'text-gray-600'}>
                         ★
                       </span>
                     ))}
@@ -163,15 +163,15 @@ export default function Modul7Dashboard() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mt-3">
                   <div className="text-center p-2 bg-white rounded-lg border border-amber-200">
-                    <p className="text-xs text-slate-500">Rasa</p>
+                    <p className="text-xs text-slate-700">Rasa</p>
                     <p className="font-bold text-slate-800">{fb.rating.rasa}</p>
                   </div>
                   <div className="text-center p-2 bg-white rounded-lg border border-amber-200">
-                    <p className="text-xs text-slate-500">Kebersihan</p>
+                    <p className="text-xs text-slate-700">Kebersihan</p>
                     <p className="font-bold text-slate-800">{fb.rating.kebersihan}</p>
                   </div>
                   <div className="text-center p-2 bg-white rounded-lg border border-amber-200">
-                    <p className="text-xs text-slate-500">Ketepatan</p>
+                    <p className="text-xs text-slate-700">Ketepatan</p>
                     <p className="font-bold text-slate-800">{fb.rating.ketepatanWaktu}</p>
                   </div>
                 </div>
@@ -195,7 +195,7 @@ export default function Modul7Dashboard() {
               </div>
               <div>
                 <p className="font-semibold text-slate-800">{user.nama}</p>
-                <p className="text-xs text-slate-500 capitalize">{user.role.replace('_', ' ')}</p>
+                <p className="text-xs text-slate-700 capitalize">{user.role.replace('_', ' ')}</p>
               </div>
             </div>
           ))}

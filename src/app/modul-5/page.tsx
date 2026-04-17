@@ -34,7 +34,7 @@ export default function Modul5Dashboard() {
         <div>
           <h1 className="text-2xl font-bold text-slate-800">Dashboard Distribusi & Logistik</h1>
           <div className="flex items-center gap-3 mt-1">
-            <p className="text-sm text-slate-500">Selasa, 17 April 2026</p>
+            <p className="text-sm text-slate-700">Selasa, 17 April 2026</p>
             <span className="px-2 py-0.5 bg-teal-100 text-teal-700 rounded text-xs font-medium border border-teal-300">
               📦 Distribusi Hari Ini
             </span>
@@ -68,29 +68,29 @@ export default function Modul5Dashboard() {
       {/* Stats */}
       <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 mb-6">
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-          <p className="text-sm text-slate-500">Total Rute</p>
+          <p className="text-sm text-slate-700">Total Rute</p>
           <p className="text-3xl font-bold text-slate-800 mt-1">{rute.length}</p>
-          <p className="text-xs text-slate-400 mt-1">rute hari ini</p>
+          <p className="text-xs text-slate-600 mt-1">rute hari ini</p>
         </div>
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-          <p className="text-sm text-slate-500">Total Box</p>
+          <p className="text-sm text-slate-700">Total Box</p>
           <p className="text-3xl font-bold text-teal-600 mt-1">{totalBox}</p>
-          <p className="text-xs text-slate-400 mt-1">box makanan</p>
+          <p className="text-xs text-slate-600 mt-1">box makanan</p>
         </div>
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-          <p className="text-sm text-slate-500">Belum Berangkat</p>
+          <p className="text-sm text-slate-700">Belum Berangkat</p>
           <p className="text-3xl font-bold text-gray-600 mt-1">{belumBerangkat}</p>
-          <p className="text-xs text-slate-400 mt-1">rute</p>
+          <p className="text-xs text-slate-600 mt-1">rute</p>
         </div>
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-          <p className="text-sm text-slate-500">Dalam Perjalanan</p>
+          <p className="text-sm text-slate-700">Dalam Perjalanan</p>
           <p className="text-3xl font-bold text-blue-600 mt-1">{dalamPerjalanan}</p>
-          <p className="text-xs text-slate-400 mt-1">rute</p>
+          <p className="text-xs text-slate-600 mt-1">rute</p>
         </div>
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-          <p className="text-sm text-slate-500">Tanda Terima</p>
+          <p className="text-sm text-slate-700">Tanda Terima</p>
           <p className="text-3xl font-bold text-emerald-600 mt-1">{tandaTerima.length}</p>
-          <p className="text-xs text-slate-400 mt-1">dokumen</p>
+          <p className="text-xs text-slate-600 mt-1">dokumen</p>
         </div>
       </div>
 
@@ -117,13 +117,13 @@ export default function Modul5Dashboard() {
             <tbody>
               {rute.map((r, idx) => (
                 <tr key={r.id} className="border-b border-gray-100 hover:bg-gray-50">
-                  <td className="py-3 px-4 text-slate-500">{idx + 1}</td>
+                  <td className="py-3 px-4 text-slate-700">{idx + 1}</td>
                   <td className="py-3 px-4 font-medium text-slate-800">{r.tujuan}</td>
                   <td className="py-3 px-4 text-slate-600">{r.petugas}</td>
                   <td className="py-3 px-4 text-slate-600">{r.jumlahBox} box</td>
                   <td className="py-3 px-4 text-slate-600">
                     {r.jadwalBerangkat}
-                    {r.waktuTiba && <span className="text-slate-400 ml-1">→ {r.waktuTiba}</span>}
+                    {r.waktuTiba && <span className="text-slate-600 ml-1">→ {r.waktuTiba}</span>}
                   </td>
                   <td className="py-3 px-4">
                     <span className={`px-2.5 py-1 rounded-lg text-xs font-medium border ${STATUS_COLORS[r.status] || 'bg-gray-100 text-gray-700'}`}>
@@ -138,7 +138,7 @@ export default function Modul5Dashboard() {
       </div>
 
       {/* Quick Actions & Recent Activity */}
-      <div className="grid grid-cols-2 gap-6 mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
         <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
           <h2 className="font-semibold text-slate-800 mb-4">Aksi Cepat</h2>
           <div className="space-y-3">
@@ -146,21 +146,21 @@ export default function Modul5Dashboard() {
               <span className="text-2xl">🗺️</span>
               <div>
                 <p className="font-semibold text-slate-800">Tracking Rute</p>
-                <p className="text-xs text-slate-500">Pantau lokasi & ETA distribusi</p>
+                <p className="text-xs text-slate-700">Pantau lokasi & ETA distribusi</p>
               </div>
             </Link>
             <Link href="/modul-5/tanda-terima" className="flex items-center gap-3 p-4 bg-blue-50 rounded-xl hover:bg-blue-100 transition">
               <span className="text-2xl">📝</span>
               <div>
                 <p className="font-semibold text-slate-800">Tanda Terima</p>
-                <p className="text-xs text-slate-500">Buat &upload bukti serah terima</p>
+                <p className="text-xs text-slate-700">Buat &upload bukti serah terima</p>
               </div>
             </Link>
             <Link href="/modul-5/insiden" className="flex items-center gap-3 p-4 bg-red-50 rounded-xl hover:bg-red-100 transition">
               <span className="text-2xl">⚠️</span>
               <div>
                 <p className="font-semibold text-slate-800">Lapor Insiden</p>
-                <p className="text-xs text-slate-500">Catat kerusakan, penolakan, keterlambatan</p>
+                <p className="text-xs text-slate-700">Catat kerusakan, penolakan, keterlambatan</p>
               </div>
             </Link>
           </div>
@@ -180,11 +180,11 @@ export default function Modul5Dashboard() {
                     {tt.jumlahBoxDiterima}/{tt.jumlahBoxDikirim} box • {tt.kondisi}
                   </p>
                 </div>
-                <span className="text-xs text-slate-400">{tt.waktuTerima.split(' ')[1]}</span>
+                <span className="text-xs text-slate-600">{tt.waktuTerima.split(' ')[1]}</span>
               </div>
             ))}
             {tandaTerima.length === 0 && (
-              <p className="text-sm text-slate-400 text-center py-4">Belum ada tanda terima hari ini</p>
+              <p className="text-sm text-slate-600 text-center py-4">Belum ada tanda terima hari ini</p>
             )}
           </div>
         </div>
@@ -203,21 +203,21 @@ export default function Modul5Dashboard() {
             <div key={item.label} className="flex-1 flex flex-col items-center gap-2">
               <div className={`w-full ${item.color} rounded-t-lg transition-all`} style={{ height: `${(item.count / rute.length) * 100}%`, minHeight: item.count > 0 ? '20px' : '4px' }} />
               <span className="text-sm font-bold text-slate-700">{item.count}</span>
-              <span className="text-xs text-slate-500 text-center leading-tight">{item.label}</span>
+              <span className="text-xs text-slate-700 text-center leading-tight">{item.label}</span>
             </div>
           ))}
         </div>
         <div className="mt-4 flex items-center justify-center gap-6">
-          <span className="flex items-center gap-2 text-xs text-slate-500">
+          <span className="flex items-center gap-2 text-xs text-slate-700">
             <div className="w-3 h-3 bg-gray-400 rounded" /> Belum Berangkat
           </span>
-          <span className="flex items-center gap-2 text-xs text-slate-500">
+          <span className="flex items-center gap-2 text-xs text-slate-700">
             <div className="w-3 h-3 bg-blue-500 rounded" /> Dalam Perjalanan
           </span>
-          <span className="flex items-center gap-2 text-xs text-slate-500">
+          <span className="flex items-center gap-2 text-xs text-slate-700">
             <div className="w-3 h-3 bg-emerald-500 rounded" /> Terkirim
           </span>
-          <span className="flex items-center gap-2 text-xs text-slate-500">
+          <span className="flex items-center gap-2 text-xs text-slate-700">
             <div className="w-3 h-3 bg-red-500 rounded" /> Terlambat
           </span>
         </div>

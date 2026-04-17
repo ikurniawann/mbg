@@ -152,7 +152,7 @@ export default function BAPBPage() {
                     <p className="text-sm text-slate-600 mt-1">
                       {bahan.jumlah} {bahan.satuan}
                     </p>
-                    <div className="mt-2 text-xs text-slate-500 space-y-0.5">
+                    <div className="mt-2 text-xs text-slate-700 space-y-0.5">
                       <p>Masuk: {bahan.tanggalMasuk}</p>
                       <p>Exp: {bahan.tanggalExp}</p>
                       {bahan.suhu !== undefined && (
@@ -192,19 +192,19 @@ export default function BAPBPage() {
             <h3 className="font-semibold text-slate-800 mb-4">Ringkasan BAPB</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
               <div>
-                <p className="text-slate-500">No. BAPB</p>
+                <p className="text-slate-700">No. BAPB</p>
                 <p className="font-mono font-semibold">{bapbNumber}</p>
               </div>
               <div>
-                <p className="text-slate-500">Tanggal</p>
+                <p className="text-slate-700">Tanggal</p>
                 <p className="font-semibold">{tanggal}</p>
               </div>
               <div>
-                <p className="text-slate-500">Pemasok</p>
+                <p className="text-slate-700">Pemasok</p>
                 <p className="font-semibold">{pemasok}</p>
               </div>
               <div>
-                <p className="text-slate-500">Jumlah Item</p>
+                <p className="text-slate-700">Jumlah Item</p>
                 <p className="font-semibold">{bahanList.length} item</p>
               </div>
             </div>
@@ -219,7 +219,7 @@ export default function BAPBPage() {
       <header className="mb-6">
         <h1 className="text-2xl font-bold text-slate-800">Form BAPB Digital</h1>
         <div className="flex items-center gap-3 mt-1">
-          <p className="text-sm text-slate-500">
+          <p className="text-sm text-slate-700">
             No. BAPB: <span className="font-mono font-semibold text-blue-600">{bapbNumber}</span>
           </p>
           <span className="px-2 py-0.5 bg-red-100 text-red-700 rounded text-xs font-medium border border-red-300">
@@ -264,7 +264,7 @@ export default function BAPBPage() {
                 <option value="Bantuan MBG">SK 244/2025 — Bantuan MBG</option>
                 <option value="Mandiri">SK 63421/2026 — Mandiri</option>
               </select>
-              <p className="text-xs text-slate-400 mt-1">Pilih dasar hukum penerimaan</p>
+              <p className="text-xs text-slate-600 mt-1">Pilih dasar hukum penerimaan</p>
             </div>
           </div>
         </div>
@@ -381,9 +381,10 @@ export default function BAPBPage() {
         {bahanList.length > 0 && (
           <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
             <h2 className="font-semibold text-slate-800 mb-4">Daftar Bahan ({bahanList.length})</h2>
-            <table className="w-full">
+            <div className="overflow-x-auto">
+            <table className="w-full min-w-[600px]">
               <thead>
-                <tr className="text-left text-xs text-slate-500 border-b">
+                <tr className="text-left text-xs text-slate-700 border-b">
                   <th className="pb-2 font-medium">Nama</th>
                   <th className="pb-2 font-medium">Jumlah</th>
                   <th className="pb-2 font-medium">Kondisi</th>
@@ -436,6 +437,7 @@ export default function BAPBPage() {
                 ))}
               </tbody>
             </table>
+            </div>
           </div>
         )}
 

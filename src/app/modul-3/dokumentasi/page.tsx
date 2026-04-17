@@ -70,7 +70,7 @@ export default function DokumentasiPage() {
       <header className="flex items-center justify-between mb-6">
         <div>
           <h1 className="text-2xl font-bold text-slate-800">Dokumentasi Produksi</h1>
-          <p className="text-sm text-slate-500">{photos.length} foto</p>
+          <p className="text-sm text-slate-700">{photos.length} foto</p>
         </div>
         <button
           onClick={() => fileInputRef.current?.click()}
@@ -90,7 +90,7 @@ export default function DokumentasiPage() {
             {uploadPreview ? (
               <img src={uploadPreview} alt="Preview" className="w-full h-full object-cover rounded-xl" />
             ) : (
-              <div className="text-center text-slate-400">
+              <div className="text-center text-slate-600">
                 <span className="text-4xl">📷</span>
                 <p className="text-xs mt-2">Klik untuk upload</p>
               </div>
@@ -188,7 +188,7 @@ export default function DokumentasiPage() {
             </div>
             <div className="p-3">
               <p className="text-sm text-slate-700 font-medium">{photo.caption}</p>
-              <div className="flex items-center justify-between mt-2 text-xs text-slate-400">
+              <div className="flex items-center justify-between mt-2 text-xs text-slate-600">
                 <span>{photo.timestamp}</span>
                 <span>{photo.user}</span>
               </div>
@@ -198,7 +198,7 @@ export default function DokumentasiPage() {
       </div>
 
       {filtered.length === 0 && (
-        <div className="text-center py-16 text-slate-400">
+        <div className="text-center py-16 text-slate-600">
           <span className="text-5xl">📷</span>
           <p className="mt-4">Tidak ada foto dalam kategori ini</p>
         </div>

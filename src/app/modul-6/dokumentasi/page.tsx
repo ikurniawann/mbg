@@ -20,7 +20,7 @@ export default function DokumentasiPage() {
       <header className="flex items-center justify-between mb-6">
         <div>
           <h1 className="text-2xl font-bold text-slate-800">Dokumentasi</h1>
-          <p className="text-sm text-slate-500 mt-1">Kelola foto dokumentasi kegiatan MBG</p>
+          <p className="text-sm text-slate-700 mt-1">Kelola foto dokumentasi kegiatan MBG</p>
         </div>
         <div className="flex gap-3">
           <button className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition">
@@ -64,8 +64,8 @@ export default function DokumentasiPage() {
         <div className="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center">
           <div className="text-4xl mb-3">📷</div>
           <p className="text-slate-700 font-medium">Tarik & letakkan foto di sini</p>
-          <p className="text-sm text-slate-500 mt-1">atau klik untuk pilih file</p>
-          <p className="text-xs text-slate-400 mt-2">Format: JPG, PNG, WebP • Maks 5MB per foto</p>
+          <p className="text-sm text-slate-700 mt-1">atau klik untuk pilih file</p>
+          <p className="text-xs text-slate-600 mt-2">Format: JPG, PNG, WebP • Maks 5MB per foto</p>
         </div>
       </div>
 
@@ -74,7 +74,7 @@ export default function DokumentasiPage() {
         <div className="flex items-center justify-between mb-4">
           <h2 className="font-semibold text-slate-800">
             📸 Dokumentasi {selectedKategori}
-            <span className="ml-2 text-sm text-slate-500 font-normal">
+            <span className="ml-2 text-sm text-slate-700 font-normal">
               ({currentDocs?.foto.length || 0} foto)
             </span>
           </h2>
@@ -102,10 +102,10 @@ export default function DokumentasiPage() {
             ))}
           </div>
         ) : (
-          <div className="text-center py-12 text-slate-400">
+          <div className="text-center py-12 text-slate-600">
             <div className="text-4xl mb-3">📭</div>
-            <p className="text-slate-500">Belum ada foto dokumentasi untuk kategori ini</p>
-            <p className="text-xs text-slate-400 mt-1">Upload foto terlebih dahulu</p>
+            <p className="text-slate-700">Belum ada foto dokumentasi untuk kategori ini</p>
+            <p className="text-xs text-slate-600 mt-1">Upload foto terlebih dahulu</p>
           </div>
         )}
       </div>

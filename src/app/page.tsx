@@ -113,7 +113,7 @@ export default function Dashboard() {
         <header className="flex items-center justify-between mb-6">
           <div>
             <h2 className="text-2xl font-bold text-slate-800">Dashboard Kepala SPPG</h2>
-            <p className="text-slate-500">Selasa, 17 April 2026</p>
+            <p className="text-slate-700">Selasa, 17 April 2026</p>
           </div>
           <div className="flex items-center gap-4">
             <span className="text-sm text-slate-600">Ahmad Fauzi - Kepala SPPG</span>
@@ -141,7 +141,7 @@ export default function Dashboard() {
         {/* Stats Cards */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
           <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-200">
-            <p className="text-sm text-slate-500 mb-1">Target Porsi</p>
+            <p className="text-sm text-slate-700 mb-1">Target Porsi</p>
             <p className="text-2xl font-bold text-slate-800">
               {stats.realizedPorsi}/{stats.targetPorsi}
             </p>
@@ -151,26 +151,26 @@ export default function Dashboard() {
                 style={{ width: `${(stats.realizedPorsi / stats.targetPorsi) * 100}%` }}
               />
             </div>
-            <p className="text-xs text-slate-400 mt-1">
+            <p className="text-xs text-slate-600 mt-1">
               {Math.round((stats.realizedPorsi / stats.targetPorsi) * 100)}%
             </p>
           </div>
           <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-200">
-            <p className="text-sm text-slate-500 mb-1">Distribusi</p>
+            <p className="text-sm text-slate-700 mb-1">Distribusi</p>
             <p className="text-2xl font-bold text-slate-800">
               {stats.distribusiSelesai}/{stats.distribusiTotal}
             </p>
-            <p className="text-xs text-slate-400 mt-2">
+            <p className="text-xs text-slate-600 mt-2">
               {stats.distribusiTotal - stats.distribusiSelesai} titik belum
             </p>
           </div>
           <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-200">
-            <p className="text-sm text-slate-500 mb-1">Stok Bahan</p>
+            <p className="text-sm text-slate-700 mb-1">Stok Bahan</p>
             <p className="text-2xl font-bold text-emerald-600">{stats.stokBahan}%</p>
-            <p className="text-xs text-slate-400 mt-2">Dalam kondisi baik</p>
+            <p className="text-xs text-slate-600 mt-2">Dalam kondisi baik</p>
           </div>
           <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-200">
-            <p className="text-sm text-slate-500 mb-1">Alert Aktif</p>
+            <p className="text-sm text-slate-700 mb-1">Alert Aktif</p>
             <p className="text-2xl font-bold text-red-500">{stats.alertAktif}</p>
             <p className="text-xs text-red-400 mt-2">Perlu ditindaklanjuti</p>
           </div>
@@ -214,12 +214,12 @@ export default function Dashboard() {
                       className="w-full bg-blue-500 rounded-t transition-all"
                       style={{ height: `${height}%` }}
                     />
-                    <span className="text-xs text-slate-500">{value}</span>
+                    <span className="text-xs text-slate-700">{value}</span>
                   </div>
                 );
               })}
             </div>
-            <div className="flex justify-between text-xs text-slate-400 mt-2">
+            <div className="flex justify-between text-xs text-slate-600 mt-2">
               <span>Senin</span>
               <span>Selasa</span>
               <span>Rabu</span>
@@ -269,7 +269,7 @@ export default function Dashboard() {
                 <div key={rute.id} className="flex items-center justify-between p-2 bg-gray-50 rounded-lg">
                   <div>
                     <p className="text-sm font-medium text-slate-800">{rute.tujuan}</p>
-                    <p className="text-xs text-slate-500">{rute.jumlahBox} box</p>
+                    <p className="text-xs text-slate-700">{rute.jumlahBox} box</p>
                   </div>
                   <span
                     className={`text-xs px-2 py-1 rounded font-medium ${

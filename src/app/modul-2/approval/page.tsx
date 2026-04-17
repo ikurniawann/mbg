@@ -94,7 +94,7 @@ export default function ApprovalPage() {
     <div className="p-6">
       <header className="mb-6">
         <h1 className="text-2xl font-bold text-slate-800">Approval Workflow</h1>
-        <p className="text-sm text-slate-500">Draft → Review → Disetujui / Ditolak</p>
+        <p className="text-sm text-slate-700">Draft → Review → Disetujui / Ditolak</p>
       </header>
 
       {/* Stats */}
@@ -107,7 +107,7 @@ export default function ApprovalPage() {
         ].map(stat => (
           <div key={stat.label} className={`bg-white rounded-xl p-4 shadow-sm border-2 ${stat.border}`}>
             <p className={`text-2xl font-bold ${stat.color.replace('bg-', 'text-')}`}>{stat.count}</p>
-            <p className="text-sm text-slate-500 mt-1">{stat.label}</p>
+            <p className="text-sm text-slate-700 mt-1">{stat.label}</p>
           </div>
         ))}
       </div>
@@ -128,8 +128,8 @@ export default function ApprovalPage() {
                   {idx + 1}
                 </div>
                 <div className="ml-3 text-center">
-                  <p className={`text-sm font-semibold ${isActive ? 'text-slate-800' : 'text-slate-400'}`}>{step}</p>
-                  <p className={`text-xs ${isActive ? 'text-slate-500' : 'text-gray-300'}`}>{itemCount} item</p>
+                  <p className={`text-sm font-semibold ${isActive ? 'text-slate-800' : 'text-slate-600'}`}>{step}</p>
+                  <p className={`text-xs ${isActive ? 'text-slate-700' : 'text-gray-600'}`}>{itemCount} item</p>
                 </div>
                 {idx < WORKFLOW.length - 1 && (
                   <div className={`w-16 h-0.5 mx-4 ${isActive ? 'bg-gray-300' : 'bg-gray-100'}`} />
@@ -147,7 +147,7 @@ export default function ApprovalPage() {
         </div>
         <div className="divide-y divide-gray-100">
           {items.filter(i => i.status === 'Review').length === 0 ? (
-            <div className="py-12 text-center text-slate-400">
+            <div className="py-12 text-center text-slate-600">
               <span className="text-4xl">✅</span>
               <p className="mt-2">Tidak ada menu menunggu approval</p>
             </div>
@@ -160,7 +160,7 @@ export default function ApprovalPage() {
                       <span className="w-3 h-3 rounded-full bg-blue-500" />
                       <p className="font-semibold text-slate-800">{item.namaMenu}</p>
                     </div>
-                    <div className="flex items-center gap-4 mt-2 text-sm text-slate-500">
+                    <div className="flex items-center gap-4 mt-2 text-sm text-slate-700">
                       <span>📅 {item.tanggal}</span>
                       <span className="px-2 py-0.5 bg-blue-100 text-blue-700 rounded text-xs font-medium">
                         Review Gizi
@@ -193,7 +193,7 @@ export default function ApprovalPage() {
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
           <div className="bg-white rounded-xl p-6 w-full max-w-md shadow-xl">
             <h3 className="font-bold text-lg text-slate-800 mb-2">Tolak Menu</h3>
-            <p className="text-sm text-slate-500 mb-4">
+            <p className="text-sm text-slate-700 mb-4">
               Menu: <strong>{selectedItem.namaMenu}</strong>
             </p>
             <div className="mb-4">
@@ -230,14 +230,15 @@ export default function ApprovalPage() {
         <div className="px-6 py-4 border-b border-gray-200 bg-slate-50">
           <h2 className="font-semibold text-slate-800">Semua Menu</h2>
         </div>
-        <table className="w-full">
+        <div className="overflow-x-auto">
+        <table className="w-full min-w-[600px]">
           <thead className="bg-slate-50 border-b">
             <tr>
-              <th className="text-left px-6 py-3 text-xs font-semibold text-slate-500 uppercase">Menu</th>
-              <th className="text-left px-6 py-3 text-xs font-semibold text-slate-500 uppercase">Tanggal</th>
-              <th className="text-left px-6 py-3 text-xs font-semibold text-slate-500 uppercase">Status</th>
-              <th className="text-left px-6 py-3 text-xs font-semibold text-slate-500 uppercase">Approved By</th>
-              <th className="text-left px-6 py-3 text-xs font-semibold text-slate-500 uppercase">Catatan</th>
+              <th className="text-left px-6 py-3 text-xs font-semibold text-slate-700 uppercase">Menu</th>
+              <th className="text-left px-6 py-3 text-xs font-semibold text-slate-700 uppercase">Tanggal</th>
+              <th className="text-left px-6 py-3 text-xs font-semibold text-slate-700 uppercase">Status</th>
+              <th className="text-left px-6 py-3 text-xs font-semibold text-slate-700 uppercase">Approved By</th>
+              <th className="text-left px-6 py-3 text-xs font-semibold text-slate-700 uppercase">Catatan</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-100">
@@ -260,7 +261,7 @@ export default function ApprovalPage() {
                 <td className="px-6 py-4 text-sm text-slate-600">
                   {item.approvedBy || '-'}
                   {item.approvedAt && (
-                    <p className="text-xs text-slate-400">{item.approvedAt}</p>
+                    <p className="text-xs text-slate-600">{item.approvedAt}</p>
                   )}
                 </td>
                 <td className="px-6 py-4 text-sm text-slate-600">
@@ -272,6 +273,7 @@ export default function ApprovalPage() {
             ))}
           </tbody>
         </table>
+        </div>
       </div>
     </div>
   );

@@ -117,7 +117,7 @@ export default function SuhuPage() {
           {/* Summary */}
           <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
             <h3 className="font-semibold text-slate-800 mb-4">Ringkasan Suhu CCP</h3>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {entries.map(entry => {
                 const status = getStatus(entry.type, entry.suhu);
                 const ccp = CCP_POINTS.find(c => c.type === entry.type);
@@ -136,13 +136,13 @@ export default function SuhuPage() {
                       <p className="text-sm font-semibold text-slate-700">{entry.type}</p>
                       <span className={`text-sm font-bold ${
                         status === 'alert' ? 'text-red-600' :
-                        status === 'ok' ? 'text-emerald-600' : 'text-slate-400'
+                        status === 'ok' ? 'text-emerald-600' : 'text-slate-600'
                       }`}>
                         {entry.suhu || '-'}°C
                       </span>
                     </div>
                     {ccp && (
-                      <p className="text-xs text-slate-400 mt-1">
+                      <p className="text-xs text-slate-600 mt-1">
                         Batas: {ccp.batasBawah}°C — {ccp.batasAtas}°C
                       </p>
                     )}
@@ -176,7 +176,7 @@ export default function SuhuPage() {
       <header className="mb-6">
         <h1 className="text-2xl font-bold text-slate-800">Monitoring Suhu CCP</h1>
         <div className="flex items-center gap-3 mt-1">
-          <p className="text-sm text-slate-500">Tanggal: {today}</p>
+          <p className="text-sm text-slate-700">Tanggal: {today}</p>
           <span className="px-2 py-0.5 bg-red-100 text-red-700 rounded text-xs font-medium border border-red-300">
             🇮🇩 SK BGN No. 244/2025 & 63421/2026
           </span>
@@ -202,7 +202,7 @@ export default function SuhuPage() {
                 <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
                   <div className="flex-1">
                     <p className="font-semibold text-slate-800">{ccp.type}</p>
-                    <p className="text-xs text-slate-400 mt-1">
+                    <p className="text-xs text-slate-600 mt-1">
                       Batas: {ccp.batasBawah}°C — {ccp.batasAtas}°C
                     </p>
                   </div>
@@ -268,14 +268,14 @@ export default function SuhuPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-2 text-center">
             {['P. Beku', 'Cold Storage', 'CR #1', 'CR #2', 'Memasak', 'Hot Hold', 'Distribusi'].map((label, idx) => (
               <div key={label}>
-                <p className="text-xs text-slate-500">{label}</p>
+                <p className="text-xs text-slate-700">{label}</p>
                 <p className={`font-bold text-sm ${idx === 3 ? 'text-red-600' : 'text-emerald-600'}`}>
                   {[-19, 4, 3, 7, 76, 62, 58][idx]}°C
                 </p>
               </div>
             ))}
           </div>
-          <p className="text-xs text-slate-400 mt-3 text-center">16 April 2026 · 07:00 · Rudi Hermawan</p>
+          <p className="text-xs text-slate-600 mt-3 text-center">16 April 2026 · 07:00 · Rudi Hermawan</p>
         </div>
       </div>
     </div>

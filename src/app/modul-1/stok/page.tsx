@@ -52,7 +52,7 @@ export default function StokPage() {
       <header className="flex items-center justify-between mb-6">
         <div>
           <h1 className="text-2xl font-bold text-slate-800">Daftar Stok Bahan</h1>
-          <p className="text-sm text-slate-500">{filteredBahan.length} dari {dummyBahan.length} item</p>
+          <p className="text-sm text-slate-700">{filteredBahan.length} dari {dummyBahan.length} item</p>
         </div>
         <div className="flex items-center gap-2">
           <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">
@@ -182,7 +182,7 @@ export default function StokPage() {
           <tbody>
             {filteredBahan.length === 0 ? (
               <tr>
-                <td colSpan={8} className="px-4 py-12 text-center text-slate-400">
+                <td colSpan={8} className="px-4 py-12 text-center text-slate-600">
                   Tidak ada data yang sesuai filter
                 </td>
               </tr>
@@ -206,7 +206,7 @@ export default function StokPage() {
                         <div className={`w-1.5 h-10 rounded-full ${expBgClass}`} />
                         <div>
                           <p className="font-semibold text-slate-800">{bahan.nama}</p>
-                          <p className="text-xs text-slate-400">ID: {bahan.id}</p>
+                          <p className="text-xs text-slate-600">ID: {bahan.id}</p>
                         </div>
                       </div>
                     </td>
@@ -250,7 +250,7 @@ export default function StokPage() {
                           ? Math.abs(bahan.suhu) > 5
                             ? 'text-amber-600'
                             : 'text-slate-700'
-                          : 'text-slate-400'
+                          : 'text-slate-600'
                       }`}>
                         {bahan.suhu !== undefined ? `${bahan.suhu}°C` : '-'}
                       </span>

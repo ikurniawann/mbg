@@ -40,7 +40,7 @@ export default function Modul1Dashboard() {
         <div>
           <h1 className="text-2xl font-bold text-slate-800">Dashboard Penerimaan & Inventori</h1>
           <div className="flex items-center gap-3 mt-1">
-            <p className="text-sm text-slate-500">Selasa, 17 April 2026</p>
+            <p className="text-sm text-slate-700">Selasa, 17 April 2026</p>
             <span className="px-2 py-0.5 bg-red-100 text-red-700 rounded text-xs font-medium border border-red-300">
               🇮🇩 SK BGN No. 244/2025 & 63421/2026
             </span>
@@ -121,9 +121,9 @@ export default function Modul1Dashboard() {
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm text-slate-500">Total BAPB</p>
+              <p className="text-sm text-slate-700">Total BAPB</p>
               <p className="text-3xl font-bold text-slate-800 mt-1">{stats.totalBAPB}</p>
-              <p className="text-xs text-slate-400 mt-1">dokumen</p>
+              <p className="text-xs text-slate-600 mt-1">dokumen</p>
             </div>
             <span className="text-3xl">📝</span>
           </div>
@@ -131,9 +131,9 @@ export default function Modul1Dashboard() {
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm text-slate-500">Total Item Bahan</p>
+              <p className="text-sm text-slate-700">Total Item Bahan</p>
               <p className="text-3xl font-bold text-slate-800 mt-1">{stats.totalBahan}</p>
-              <p className="text-xs text-slate-400 mt-1">jenis bahan</p>
+              <p className="text-xs text-slate-600 mt-1">jenis bahan</p>
             </div>
             <span className="text-3xl">📦</span>
           </div>
@@ -216,7 +216,7 @@ export default function Modul1Dashboard() {
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
-                <tr className="text-left text-xs text-slate-500 border-b">
+                <tr className="text-left text-xs text-slate-700 border-b">
                   <th className="pb-2 font-medium">No. BAPB</th>
                   <th className="pb-2 font-medium">Tanggal</th>
                   <th className="pb-2 font-medium">Pemasok</th>
@@ -258,7 +258,7 @@ export default function Modul1Dashboard() {
               <span className="text-xl">📝</span>
               <div>
                 <p className="text-sm font-medium text-slate-800">BAPB Baru</p>
-                <p className="text-xs text-slate-500">Terima bahan baru</p>
+                <p className="text-xs text-slate-700">Terima bahan baru</p>
               </div>
             </Link>
             <Link
@@ -268,7 +268,7 @@ export default function Modul1Dashboard() {
               <span className="text-xl">🏷️</span>
               <div>
                 <p className="text-sm font-medium text-slate-800">Generate Label</p>
-                <p className="text-xs text-slate-500">Cetak label bahan</p>
+                <p className="text-xs text-slate-700">Cetak label bahan</p>
               </div>
             </Link>
             <Link
@@ -278,7 +278,7 @@ export default function Modul1Dashboard() {
               <span className="text-xl">📦</span>
               <div>
                 <p className="text-sm font-medium text-slate-800">Cek Stok</p>
-                <p className="text-xs text-slate-500">Lihat stok bahan</p>
+                <p className="text-xs text-slate-700">Lihat stok bahan</p>
               </div>
             </Link>
             <Link
@@ -288,7 +288,7 @@ export default function Modul1Dashboard() {
               <span className="text-xl">📋</span>
               <div>
                 <p className="text-sm font-medium text-slate-800">Audit Trail</p>
-                <p className="text-xs text-slate-500">Riwayat perubahan</p>
+                <p className="text-xs text-slate-700">Riwayat perubahan</p>
               </div>
             </Link>
           </div>
@@ -327,7 +327,7 @@ export default function Modul1Dashboard() {
                     }`}>
                       {bahan.jenis}
                     </span>
-                    <span className="text-xs text-slate-500">{bahan.lokasi}</span>
+                    <span className="text-xs text-slate-700">{bahan.lokasi}</span>
                   </div>
                 </div>
                 <span className={`text-xs px-2 py-1 rounded ${
@@ -338,7 +338,7 @@ export default function Modul1Dashboard() {
                   {bahan.kondisi}
                 </span>
               </div>
-              <div className="mt-2 text-xs text-slate-400">
+              <div className="mt-2 text-xs text-slate-600">
                 Exp: {bahan.tanggalExp}
                 {bahan.suhu !== undefined && (
                   <span className="ml-2">· {bahan.suhu}°C</span>

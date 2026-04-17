@@ -116,7 +116,7 @@ export default function LabelPage() {
     <div className="p-6">
       <header className="mb-6">
         <h1 className="text-2xl font-bold text-slate-800">Generator Label Bahan</h1>
-        <p className="text-sm text-slate-500">Generate label dengan kode MBG-MMYY-NNN + QR Code</p>
+        <p className="text-sm text-slate-700">Generate label dengan kode MBG-MMYY-NNN + QR Code</p>
       </header>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -135,7 +135,7 @@ export default function LabelPage() {
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
                 />
               </div>
-              <div className="grid grid-cols-2 gap-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 <div>
                   <label className="block text-xs font-medium text-slate-600 mb-1">Jumlah</label>
                   <input
@@ -211,7 +211,7 @@ export default function LabelPage() {
                   <div key={label.kode} className="flex items-center justify-between p-2 bg-gray-50 rounded-lg">
                     <div>
                       <p className="text-sm font-medium">{label.nama}</p>
-                      <p className="text-xs text-slate-500">{label.kode}</p>
+                      <p className="text-xs text-slate-700">{label.kode}</p>
                     </div>
                     <div className="flex gap-1">
                       <button
@@ -232,7 +232,7 @@ export default function LabelPage() {
               </div>
               <button
                 onClick={() => setLabels([])}
-                className="mt-3 w-full text-xs text-slate-500 hover:text-slate-700"
+                className="mt-3 w-full text-xs text-slate-700 hover:text-slate-700"
               >
                 Clear all
               </button>
@@ -256,7 +256,7 @@ export default function LabelPage() {
             </div>
 
             {labels.length === 0 ? (
-              <div className="text-center py-16 text-slate-400">
+              <div className="text-center py-16 text-slate-600">
                 <span className="text-5xl">🏷️</span>
                 <p className="mt-4">Belum ada label. Generate label baru dari form.</p>
               </div>
@@ -294,7 +294,7 @@ export default function LabelPage() {
                       <QRCodeSVG value={label.kode} size={64} />
                     </div>
                     <p className="mt-2 font-mono font-bold text-sm">{label.kode}</p>
-                    <p className="text-xs text-slate-500 mt-1">Exp: {label.tanggalExp}</p>
+                    <p className="text-xs text-slate-700 mt-1">Exp: {label.tanggalExp}</p>
                   </div>
                 ))}
               </div>

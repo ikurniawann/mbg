@@ -41,7 +41,7 @@ export default function Modul3Dashboard() {
         <div>
           <h1 className="text-2xl font-bold text-slate-800">Dashboard Produksi Dapur</h1>
           <div className="flex items-center gap-3 mt-1">
-            <p className="text-sm text-slate-500">Selasa, 17 April 2026 · Menu: Ikan Goreng + Capcay</p>
+            <p className="text-sm text-slate-700">Selasa, 17 April 2026 · Menu: Ikan Goreng + Capcay</p>
             <span className="px-2 py-0.5 bg-red-100 text-red-700 rounded text-xs font-medium border border-red-300">
               🇮🇩 SK BGN No. 244/2025 & 63421/2026
             </span>
@@ -95,43 +95,43 @@ export default function Modul3Dashboard() {
             {produksi.timerStatus === 'normal' ? '✓' :
               produksi.timerStatus === 'warning' ? '⚠️' : '🚨'} OK
           </p>
-          <p className="text-xs text-slate-500">Status</p>
+          <p className="text-xs text-slate-700">Status</p>
         </div>
       </div>
 
       {/* Progress & Stats Row */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-          <p className="text-sm text-slate-500">Target Porsi</p>
+          <p className="text-sm text-slate-700">Target Porsi</p>
           <p className="text-3xl font-bold text-slate-800 mt-1">{produksi.targetPorsi}</p>
           <div className="mt-2 bg-gray-200 rounded-full h-2">
             <div className="bg-orange-500 h-2 rounded-full" style={{ width: `${(produksi.realizedPorsi / produksi.targetPorsi) * 100}%` }} />
           </div>
-          <p className="text-xs text-slate-400 mt-1">{produksi.realizedPorsi} porsi (68%)</p>
+          <p className="text-xs text-slate-600 mt-1">{produksi.realizedPorsi} porsi (68%)</p>
         </div>
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-          <p className="text-sm text-slate-500">Shift Selesai</p>
+          <p className="text-sm text-slate-700">Shift Selesai</p>
           <p className="text-3xl font-bold text-blue-600 mt-1">
             {Object.values(shiftStatus).filter(s => s === 'completed').length}/{SHIFTS.length}
           </p>
-          <p className="text-xs text-slate-400 mt-1">shift aktif</p>
+          <p className="text-xs text-slate-600 mt-1">shift aktif</p>
         </div>
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-          <p className="text-sm text-slate-500">Staf Healthy</p>
+          <p className="text-sm text-slate-700">Staf Healthy</p>
           <p className="text-3xl font-bold text-emerald-600 mt-1">
             {healthChecks.filter(h => h.kondisi === 'Sehat' && h.apdLengkap).length}/{healthChecks.length}
           </p>
-          <p className="text-xs text-slate-400 mt-1">lolos health check</p>
+          <p className="text-xs text-slate-600 mt-1">lolos health check</p>
         </div>
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-          <p className="text-sm text-slate-500">Bahan Terpakai</p>
+          <p className="text-sm text-slate-700">Bahan Terpakai</p>
           <p className="text-3xl font-bold text-purple-600 mt-1">{produksi.bahanTerpakai.length}</p>
-          <p className="text-xs text-slate-400 mt-1">jenis bahan</p>
+          <p className="text-xs text-slate-600 mt-1">jenis bahan</p>
         </div>
       </div>
 
       {/* Shift Checklist */}
-      <div className="grid grid-cols-2 gap-6 mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
         <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
           <h2 className="font-semibold text-slate-800 mb-4">Checklist Shift Harian</h2>
           <div className="space-y-3">
@@ -166,7 +166,7 @@ export default function Modul3Dashboard() {
                           {shift}
                         </p>
                         {task && (
-                          <p className="text-xs text-slate-500">{task.tugas} · {task.petugas}</p>
+                          <p className="text-xs text-slate-700">{task.tugas} · {task.petugas}</p>
                         )}
                       </div>
                     </div>
@@ -264,13 +264,13 @@ export default function Modul3Dashboard() {
                       }`}>
                         {isBantuanMBG ? '🔵 Bantuan MBG' : '🟢 Mandiri'}
                       </span>
-                      <span className="text-[10px] text-slate-400">dari stok inventori</span>
+                      <span className="text-[10px] text-slate-600">dari stok inventori</span>
                     </div>
                   </div>
                 </div>
                 <div className="text-right">
                   <p className="font-bold text-purple-600">{bahan.jumlah} {bahan.satuan}</p>
-                  <p className="text-[10px] text-slate-400">
+                  <p className="text-[10px] text-slate-600">
                     {isBantuanMBG ? 'Ref: SK 244/2025' : 'Ref: SK 63421/2026'}
                   </p>
                 </div>
@@ -288,7 +288,7 @@ export default function Modul3Dashboard() {
             <div className="w-3 h-3 rounded-full bg-emerald-400" />
             <span className="text-xs text-slate-600">Mandiri</span>
           </div>
-          <span className="ml-auto text-xs text-slate-500">
+          <span className="ml-auto text-xs text-slate-700">
             Breakdown sesuai SK 244 & 63421
           </span>
         </div>
@@ -300,7 +300,7 @@ export default function Modul3Dashboard() {
           <h2 className="font-semibold text-slate-800">Progress Produksi Keseluruhan</h2>
           <span className="text-lg font-bold text-orange-600">{progressTotal}%</span>
         </div>
-        <div className="grid grid-cols-5 gap-2">
+        <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
           {SHIFTS.map((shift) => {
             const pct = PROGRESS_MAP[shift] || 0;
             const done = shiftStatus[shift] === 'completed';

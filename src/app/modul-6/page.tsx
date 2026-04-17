@@ -35,7 +35,7 @@ export default function Modul6Dashboard() {
         <div>
           <h1 className="text-2xl font-bold text-slate-800">Dashboard Dokumentasi & LPJ</h1>
           <div className="flex items-center gap-3 mt-1">
-            <p className="text-sm text-slate-500">Selasa, 17 April 2026</p>
+            <p className="text-sm text-slate-700">Selasa, 17 April 2026</p>
             <span className="px-2 py-0.5 bg-violet-100 text-violet-700 rounded text-xs font-medium border border-violet-300">
               📋 LPJ MBG — Bulan {MONTH_NAMES[lpj.bulan]} {lpj.tahun}
             </span>
@@ -64,12 +64,12 @@ export default function Modul6Dashboard() {
             <p className="text-sm text-slate-600 mt-1">
               Status saat ini: <span className={`font-bold ${statusCfg.text}`}>{lpj.status}</span>
             </p>
-            <p className="text-xs text-slate-500 mt-1">
+            <p className="text-xs text-slate-700 mt-1">
               {approvedCount}/{lpj.approvalFlow.length} approval terselesaikan
             </p>
           </div>
           <div className="text-right">
-            <p className="text-xs text-slate-500">Periode</p>
+            <p className="text-xs text-slate-700">Periode</p>
             <p className="text-2xl font-black text-slate-800">{MONTH_NAMES[lpj.bulan]}</p>
             <p className="text-sm font-bold text-slate-600">{lpj.tahun}</p>
           </div>
@@ -79,32 +79,32 @@ export default function Modul6Dashboard() {
       {/* Stats Grid */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-          <p className="text-sm text-slate-500">Total Porsi</p>
+          <p className="text-sm text-slate-700">Total Porsi</p>
           <p className="text-3xl font-bold text-violet-600 mt-1">
             {lpj.ringkasan.totalPorsi.toLocaleString('id-ID')}
           </p>
-          <p className="text-xs text-slate-400 mt-1">porsi dalam bulan ini</p>
+          <p className="text-xs text-slate-600 mt-1">porsi dalam bulan ini</p>
         </div>
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-          <p className="text-sm text-slate-500">Total Bahan</p>
+          <p className="text-sm text-slate-700">Total Bahan</p>
           <p className="text-3xl font-bold text-blue-600 mt-1">
             {lpj.ringkasan.totalBahan.toLocaleString('id-ID')}
           </p>
-          <p className="text-xs text-slate-400 mt-1">item bahan digunakan</p>
+          <p className="text-xs text-slate-600 mt-1">item bahan digunakan</p>
         </div>
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-          <p className="text-sm text-slate-500">Total Distribusi</p>
+          <p className="text-sm text-slate-700">Total Distribusi</p>
           <p className="text-3xl font-bold text-emerald-600 mt-1">
             {lpj.ringkasan.totalDistribusi.toLocaleString('id-ID')}
           </p>
-          <p className="text-xs text-slate-400 mt-1">rute distribusi</p>
+          <p className="text-xs text-slate-600 mt-1">rute distribusi</p>
         </div>
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-          <p className="text-sm text-slate-500">Total Keuangan</p>
+          <p className="text-sm text-slate-700">Total Keuangan</p>
           <p className="text-3xl font-bold text-amber-600 mt-1">
             Rp{(lpj.keuangan.total / 1000000).toFixed(0)}jt
           </p>
-          <p className="text-xs text-slate-400 mt-1">dana terealisasi</p>
+          <p className="text-xs text-slate-600 mt-1">dana terealisasi</p>
         </div>
       </div>
 
@@ -172,7 +172,7 @@ export default function Modul6Dashboard() {
                   </p>
                   <p className={`text-xs mt-1 ${
                     step.status === 'Approved' ? 'text-emerald-600' :
-                    step.status === 'Rejected' ? 'text-red-600' : 'text-slate-500'
+                    step.status === 'Rejected' ? 'text-red-600' : 'text-slate-700'
                   }`}>
                     {step.status === 'Approved'
                       ? `Disetujui ${step.approvedBy}`
@@ -181,11 +181,11 @@ export default function Modul6Dashboard() {
                       : 'Menunggu'}
                   </p>
                   {step.approvedAt && (
-                    <p className="text-xs text-slate-400 mt-0.5">{step.approvedAt}</p>
+                    <p className="text-xs text-slate-600 mt-0.5">{step.approvedAt}</p>
                   )}
                 </div>
                 {!isLast && (
-                  <div className="w-8 flex items-center justify-center text-slate-400">
+                  <div className="w-8 flex items-center justify-center text-slate-600">
                     →
                   </div>
                 )}
@@ -204,21 +204,21 @@ export default function Modul6Dashboard() {
               <span className="text-2xl">📑</span>
               <div>
                 <p className="font-semibold text-slate-800">LPJ Bulanan</p>
-                <p className="text-xs text-slate-500">Lihat & generate laporan</p>
+                <p className="text-xs text-slate-700">Lihat & generate laporan</p>
               </div>
             </Link>
             <Link href="/modul-6/dokumentasi" className="flex items-center gap-3 p-4 bg-blue-50 rounded-xl hover:bg-blue-100 transition">
               <span className="text-2xl">📸</span>
               <div>
                 <p className="font-semibold text-slate-800">Dokumentasi</p>
-                <p className="text-xs text-slate-500">Foto produksi, packing, distribusi</p>
+                <p className="text-xs text-slate-700">Foto produksi, packing, distribusi</p>
               </div>
             </Link>
             <Link href="/modul-6/keuangan" className="flex items-center gap-3 p-4 bg-emerald-50 rounded-xl hover:bg-emerald-100 transition">
               <span className="text-2xl">💰</span>
               <div>
                 <p className="font-semibold text-slate-800">Ringkasan Keuangan</p>
-                <p className="text-xs text-slate-500">Bantuan MBG & Mandiri</p>
+                <p className="text-xs text-slate-700">Bantuan MBG & Mandiri</p>
               </div>
             </Link>
           </div>
@@ -235,7 +235,7 @@ export default function Modul6Dashboard() {
                 </div>
                 <div>
                   <p className="font-semibold text-slate-700">{doc.kategori}</p>
-                  <p className="text-xs text-slate-500">{doc.foto.length} foto</p>
+                  <p className="text-xs text-slate-700">{doc.foto.length} foto</p>
                 </div>
               </div>
             ))}
@@ -249,7 +249,7 @@ export default function Modul6Dashboard() {
             {lpj.menuList.map((menu, idx) => (
               <div key={idx} className="p-3 bg-gray-50 rounded-lg border border-gray-200">
                 <p className="text-sm font-medium text-slate-700">{menu.namaMenu}</p>
-                <p className="text-xs text-slate-500">{menu.tanggal}</p>
+                <p className="text-xs text-slate-700">{menu.tanggal}</p>
               </div>
             ))}
           </div>

@@ -27,7 +27,7 @@ export default function Modul4Dashboard() {
         <div>
           <h1 className="text-2xl font-bold text-slate-800">Dashboard Food Safety & HACCP</h1>
           <div className="flex items-center gap-3 mt-1">
-            <p className="text-sm text-slate-500">Selasa, 17 April 2026</p>
+            <p className="text-sm text-slate-700">Selasa, 17 April 2026</p>
             <span className="px-2 py-0.5 bg-red-100 text-red-700 rounded text-xs font-medium border border-red-300">
               🇮🇩 SK BGN No. 244/2025 & 63421/2026
             </span>
@@ -61,26 +61,26 @@ export default function Modul4Dashboard() {
       {/* Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-          <p className="text-sm text-slate-500">CCP Points</p>
+          <p className="text-sm text-slate-700">CCP Points</p>
           <p className="text-3xl font-bold text-slate-800 mt-1">{suhu.ccps.length}</p>
-          <p className="text-xs text-slate-400 mt-1">titik kontrol aktif</p>
+          <p className="text-xs text-slate-600 mt-1">titik kontrol aktif</p>
         </div>
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-          <p className="text-sm text-slate-500">CCP Normal</p>
+          <p className="text-sm text-slate-700">CCP Normal</p>
           <p className="text-3xl font-bold text-emerald-600 mt-1">
             {suhu.ccps.filter(c => c.status === 'OK').length}
           </p>
-          <p className="text-xs text-slate-400 mt-1">titik dalam batas</p>
+          <p className="text-xs text-slate-600 mt-1">titik dalam batas</p>
         </div>
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-          <p className="text-sm text-slate-500">CCP Alert</p>
+          <p className="text-sm text-slate-700">CCP Alert</p>
           <p className="text-3xl font-bold text-red-600 mt-1">{alertCCPs.length}</p>
-          <p className="text-xs text-slate-400 mt-1">titik melebihi batas</p>
+          <p className="text-xs text-slate-600 mt-1">titik melebihi batas</p>
         </div>
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-          <p className="text-sm text-slate-500">Sanitasi Harian</p>
+          <p className="text-sm text-slate-700">Sanitasi Harian</p>
           <p className="text-3xl font-bold text-blue-600 mt-1">{completedSanit}/{sanitasi.item.length}</p>
-          <p className="text-xs text-slate-400 mt-1">item checklist</p>
+          <p className="text-xs text-slate-600 mt-1">item checklist</p>
         </div>
       </div>
 
@@ -113,7 +113,7 @@ export default function Modul4Dashboard() {
                     <p className={`text-3xl font-black ${ccp.status === 'ALERT' ? 'text-red-600' : 'text-emerald-700'}`}>
                       {ccp.suhu}°C
                     </p>
-                    <p className="text-xs text-slate-500 mt-1">Batas: {bounds.min}°C — {bounds.max}°C</p>
+                    <p className="text-xs text-slate-700 mt-1">Batas: {bounds.min}°C — {bounds.max}°C</p>
                   </div>
                   <div className="w-20 bg-gray-200 rounded-full h-2">
                     <div
@@ -129,7 +129,7 @@ export default function Modul4Dashboard() {
       </div>
 
       {/* Sanitasi Checklist */}
-      <div className="grid grid-cols-2 gap-6 mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
         <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
           <h2 className="font-semibold text-slate-800 mb-4">Checklist Sanitasi Harian</h2>
           <div className="space-y-3">
@@ -158,7 +158,7 @@ export default function Modul4Dashboard() {
           </div>
           <div className="mt-4 pt-4 border-t border-gray-100">
             <div className="flex items-center justify-between text-sm">
-              <span className="text-slate-500">Progress</span>
+              <span className="text-slate-700">Progress</span>
               <span className="font-bold text-emerald-600">{completedSanit}/{sanitasi.item.length}</span>
             </div>
             <div className="mt-2 bg-gray-200 rounded-full h-2">
@@ -178,28 +178,28 @@ export default function Modul4Dashboard() {
               <span className="text-2xl">🌡️</span>
               <div>
                 <p className="font-semibold text-slate-800">Input Suhu CCP</p>
-                <p className="text-xs text-slate-500">Catat suhu 6 titik kontrol</p>
+                <p className="text-xs text-slate-700">Catat suhu 6 titik kontrol</p>
               </div>
             </Link>
             <Link href="/modul-4/sanitasi" className="flex items-center gap-3 p-4 bg-blue-50 rounded-xl hover:bg-blue-100 transition">
               <span className="text-2xl">🧹</span>
               <div>
                 <p className="font-semibold text-slate-800">Checklist Sanitasi</p>
-                <p className="text-xs text-slate-500">Harian, mingguan, bulanan</p>
+                <p className="text-xs text-slate-700">Harian, mingguan, bulanan</p>
               </div>
             </Link>
             <Link href="/modul-4/korektif" className="flex items-center gap-3 p-4 bg-amber-50 rounded-xl hover:bg-amber-100 transition">
               <span className="text-2xl">🔧</span>
               <div>
                 <p className="font-semibold text-slate-800">Tindakan Korektif</p>
-                <p className="text-xs text-slate-500">Log & tracking masalah</p>
+                <p className="text-xs text-slate-700">Log & tracking masalah</p>
               </div>
             </Link>
             <Link href="/modul-4/km" className="flex items-center gap-3 p-4 bg-red-50 rounded-xl hover:bg-red-100 transition">
               <span className="text-2xl">🚨</span>
               <div>
                 <p className="font-semibold text-slate-800">Kejadian Menonjol (KM)</p>
-                <p className="text-xs text-slate-500">Lapor & tracking KM — wajib 12 jam</p>
+                <p className="text-xs text-slate-700">Lapor & tracking KM — wajib 12 jam</p>
               </div>
             </Link>
           </div>
@@ -226,12 +226,12 @@ export default function Modul4Dashboard() {
                     style={{ height: `${height}%` }}
                   />
                 </div>
-                <span className="text-xs text-slate-500">{days[idx]}</span>
+                <span className="text-xs text-slate-700">{days[idx]}</span>
               </div>
             );
           })}
         </div>
-        <div className="mt-3 flex items-center justify-center gap-6 text-xs text-slate-500">
+        <div className="mt-3 flex items-center justify-center gap-6 text-xs text-slate-700">
           <span className="flex items-center gap-1">
             <div className="w-3 h-3 bg-emerald-400 rounded" /> Normal (≤5°C)
           </span>

@@ -172,7 +172,7 @@ export default function KorektifPage() {
       <header className="flex items-center justify-between mb-6">
         <div>
           <h1 className="text-2xl font-bold text-slate-800">Tindakan Korektif</h1>
-          <p className="text-sm text-slate-500">{entries.length} total</p>
+          <p className="text-sm text-slate-700">{entries.length} total</p>
         </div>
         <button
           onClick={() => setShowAddForm(true)}
@@ -227,20 +227,20 @@ export default function KorektifPage() {
           <table className="w-full">
             <thead className="bg-slate-50 border-b">
               <tr>
-                <th className="text-left px-4 py-3 text-xs font-semibold text-slate-500 uppercase">ID</th>
-                <th className="text-left px-4 py-3 text-xs font-semibold text-slate-500 uppercase">Masalah</th>
-                <th className="text-left px-4 py-3 text-xs font-semibold text-slate-500 uppercase">Lokasi</th>
-                <th className="text-left px-4 py-3 text-xs font-semibold text-slate-500 uppercase">Severity</th>
-                <th className="text-left px-4 py-3 text-xs font-semibold text-slate-500 uppercase">Status</th>
-                <th className="text-left px-4 py-3 text-xs font-semibold text-slate-500 uppercase">Due Date</th>
-                <th className="text-left px-4 py-3 text-xs font-semibold text-slate-500 uppercase">Responsible</th>
-                <th className="text-left px-4 py-3 text-xs font-semibold text-slate-500 uppercase">Aksi</th>
+                <th className="text-left px-4 py-3 text-xs font-semibold text-slate-700 uppercase">ID</th>
+                <th className="text-left px-4 py-3 text-xs font-semibold text-slate-700 uppercase">Masalah</th>
+                <th className="text-left px-4 py-3 text-xs font-semibold text-slate-700 uppercase">Lokasi</th>
+                <th className="text-left px-4 py-3 text-xs font-semibold text-slate-700 uppercase">Severity</th>
+                <th className="text-left px-4 py-3 text-xs font-semibold text-slate-700 uppercase">Status</th>
+                <th className="text-left px-4 py-3 text-xs font-semibold text-slate-700 uppercase">Due Date</th>
+                <th className="text-left px-4 py-3 text-xs font-semibold text-slate-700 uppercase">Responsible</th>
+                <th className="text-left px-4 py-3 text-xs font-semibold text-slate-700 uppercase">Aksi</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-100">
               {filtered.length === 0 ? (
                 <tr>
-                  <td colSpan={8} className="px-4 py-12 text-center text-slate-400">
+                  <td colSpan={8} className="px-4 py-12 text-center text-slate-600">
                     Tidak ada data
                   </td>
                 </tr>
@@ -249,11 +249,11 @@ export default function KorektifPage() {
                   <tr key={entry.id} className="hover:bg-gray-50">
                     <td className="px-4 py-3">
                       <span className="font-mono text-sm font-bold text-slate-700">{entry.id}</span>
-                      <p className="text-xs text-slate-400">{entry.tanggal}</p>
+                      <p className="text-xs text-slate-600">{entry.tanggal}</p>
                     </td>
                     <td className="px-4 py-3">
                       <p className="text-sm text-slate-800 max-w-xs truncate">{entry.masalah}</p>
-                      <p className="text-xs text-slate-400">{entry.kategori}</p>
+                      <p className="text-xs text-slate-600">{entry.kategori}</p>
                     </td>
                     <td className="px-4 py-3 text-sm text-slate-600">{entry.lokasi}</td>
                     <td className="px-4 py-3">
@@ -296,7 +296,7 @@ export default function KorektifPage() {
           <div className="bg-white rounded-xl p-6 w-full max-w-lg shadow-xl max-h-[90vh] overflow-y-auto">
             <div className="flex items-center justify-between mb-4">
               <h3 className="font-bold text-lg text-slate-800">Buat CAR (Corrective Action Request)</h3>
-              <button onClick={() => setShowAddForm(false)} className="text-slate-400 hover:text-slate-600 text-xl">✕</button>
+              <button onClick={() => setShowAddForm(false)} className="text-slate-600 hover:text-slate-600 text-xl">✕</button>
             </div>
             <div className="space-y-4">
               <div>
@@ -397,7 +397,7 @@ export default function KorektifPage() {
             <div className="flex items-center justify-between mb-4">
               <div>
                 <span className="font-mono font-bold text-slate-700">{selectedEntry.id}</span>
-                <p className="text-xs text-slate-400">{selectedEntry.tanggal}</p>
+                <p className="text-xs text-slate-600">{selectedEntry.tanggal}</p>
               </div>
               <div className="flex gap-2">
                 <span className={`text-xs px-2 py-0.5 rounded-full font-semibold border ${severityColor(selectedEntry.severity)}`}>
@@ -416,11 +416,11 @@ export default function KorektifPage() {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div>
-                  <p className="text-xs text-slate-500">Kategori</p>
+                  <p className="text-xs text-slate-700">Kategori</p>
                   <p className="font-medium">{selectedEntry.kategori}</p>
                 </div>
                 <div>
-                  <p className="text-xs text-slate-500">Lokasi</p>
+                  <p className="text-xs text-slate-700">Lokasi</p>
                   <p className="font-medium">{selectedEntry.lokasi}</p>
                 </div>
               </div>
@@ -438,17 +438,17 @@ export default function KorektifPage() {
               )}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div>
-                  <p className="text-xs text-slate-500">Responsible</p>
+                  <p className="text-xs text-slate-700">Responsible</p>
                   <p className="font-medium">{selectedEntry.responsible || '-'}</p>
                 </div>
                 <div>
-                  <p className="text-xs text-slate-500">Due Date</p>
+                  <p className="text-xs text-slate-700">Due Date</p>
                   <p className="font-medium">{selectedEntry.dueDate || '-'}</p>
                 </div>
               </div>
               {selectedEntry.closedAt && (
                 <div>
-                  <p className="text-xs text-slate-500">Closed At</p>
+                  <p className="text-xs text-slate-700">Closed At</p>
                   <p className="font-medium text-emerald-600">{selectedEntry.closedAt}</p>
                 </div>
               )}

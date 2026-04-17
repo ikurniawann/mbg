@@ -117,7 +117,7 @@ export default function SRCCardPage() {
       <header className="flex items-center justify-between mb-6">
         <div>
           <h1 className="text-2xl font-bold text-slate-800">Standard Recipe Card (SRC)</h1>
-          <p className="text-sm text-slate-500">{dummySRC.length} SRC Card aktif</p>
+          <p className="text-sm text-slate-700">{dummySRC.length} SRC Card aktif</p>
         </div>
         <button
           onClick={printSRC}
@@ -142,7 +142,7 @@ export default function SRCCardPage() {
             <div className="flex items-start justify-between">
               <div>
                 <p className="font-bold text-lg text-slate-800">{src.namaMenu}</p>
-                <p className="text-sm text-slate-500 mt-1">{src.porsi} porsi</p>
+                <p className="text-sm text-slate-700 mt-1">{src.porsi} porsi</p>
               </div>
               <span className="text-3xl">🍽️</span>
             </div>
@@ -206,7 +206,7 @@ export default function SRCCardPage() {
                     </div>
                     <div className="text-right">
                       <span className="text-sm font-semibold text-slate-800">{bahan.jumlah} {bahan.satuan}</span>
-                      <p className="text-[10px] text-slate-400">{bahan.asal}</p>
+                      <p className="text-[10px] text-slate-600">{bahan.asal}</p>
                     </div>
                   </div>
                 ))}
@@ -230,7 +230,7 @@ export default function SRCCardPage() {
                     </div>
                     <div>
                       <p className={`text-sm font-semibold ${item.textColor}`}>{item.value}{item.unit}</p>
-                      <p className="text-xs text-slate-400">{item.label}</p>
+                      <p className="text-xs text-slate-600">{item.label}</p>
                     </div>
                   </div>
                 ))}
@@ -286,7 +286,7 @@ export default function SRCCardPage() {
               </div>
               <div>
                 <p className="text-sm font-mono font-semibold text-slate-700">SRC-{selectedSRC.id}</p>
-                <p className="text-xs text-slate-400">Scan untuk verifikasi</p>
+                <p className="text-xs text-slate-600">Scan untuk verifikasi</p>
               </div>
             </div>
             <button

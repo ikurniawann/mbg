@@ -62,7 +62,7 @@ export default function InsidenPage() {
             <Link href="/modul-5" className="text-sm text-teal-600 hover:text-teal-700">← Modul 5</Link>
           </div>
           <h1 className="text-2xl font-bold text-slate-800">Insiden Distribusi</h1>
-          <p className="text-sm text-slate-500 mt-1">Selasa, 17 April 2026 • Catat & tracking insiden distribusi</p>
+          <p className="text-sm text-slate-700 mt-1">Selasa, 17 April 2026 • Catat & tracking insiden distribusi</p>
         </div>
         <button
           onClick={() => setShowForm(!showForm)}
@@ -142,8 +142,8 @@ export default function InsidenPage() {
             <label className="block text-sm font-medium text-slate-700 mb-1">Upload Dokumentasi</label>
             <div className="border-2 border-dashed border-gray-300 rounded-xl p-6 text-center hover:border-teal-400 transition">
               <span className="text-3xl">📷</span>
-              <p className="text-sm text-slate-500 mt-2">Klik untuk upload foto/video insiden</p>
-              <p className="text-xs text-slate-400 mt-1">PNG, JPG, MP4 hingga 10MB</p>
+              <p className="text-sm text-slate-700 mt-2">Klik untuk upload foto/video insiden</p>
+              <p className="text-xs text-slate-600 mt-1">PNG, JPG, MP4 hingga 10MB</p>
             </div>
           </div>
           <div className="flex gap-3 mt-6">
@@ -160,23 +160,23 @@ export default function InsidenPage() {
       {/* Stats */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-          <p className="text-sm text-slate-500">Total Insiden</p>
+          <p className="text-sm text-slate-700">Total Insiden</p>
           <p className="text-3xl font-bold text-slate-800 mt-1">{dummyInsiden.length}</p>
-          <p className="text-xs text-slate-400 mt-1">laporan</p>
+          <p className="text-xs text-slate-600 mt-1">laporan</p>
         </div>
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-          <p className="text-sm text-slate-500">Open</p>
+          <p className="text-sm text-slate-700">Open</p>
           <p className="text-3xl font-bold text-red-600 mt-1">
             {dummyInsiden.filter(i => i.status === 'Open').length}
           </p>
-          <p className="text-xs text-slate-400 mt-1">belum ditangani</p>
+          <p className="text-xs text-slate-600 mt-1">belum ditangani</p>
         </div>
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200">
-          <p className="text-sm text-slate-500">Dalam Investigasi</p>
+          <p className="text-sm text-slate-700">Dalam Investigasi</p>
           <p className="text-3xl font-bold text-amber-600 mt-1">
             {dummyInsiden.filter(i => i.status === 'Investigasi').length}
           </p>
-          <p className="text-xs text-slate-400 mt-1">proses penyidikan</p>
+          <p className="text-xs text-slate-600 mt-1">proses penyidikan</p>
         </div>
       </div>
 
@@ -213,7 +213,7 @@ export default function InsidenPage() {
                 <span className="text-2xl">{JENIS_ICONS[insiden.jenis]}</span>
                 <div>
                   <h3 className="font-semibold text-slate-800">{insiden.jenis}</h3>
-                  <p className="text-xs text-slate-500">ID: {insiden.id}</p>
+                  <p className="text-xs text-slate-700">ID: {insiden.id}</p>
                 </div>
               </div>
               <span className={`px-3 py-1.5 rounded-lg text-xs font-bold border ${STATUS_COLORS[insiden.status]}`}>
@@ -225,15 +225,15 @@ export default function InsidenPage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
               <div className="bg-gray-50 rounded-lg p-3">
-                <p className="text-xs text-slate-500">Rute</p>
+                <p className="text-xs text-slate-700">Rute</p>
                 <p className="text-sm font-medium text-slate-800">{insiden.ruteId}</p>
               </div>
               <div className="bg-gray-50 rounded-lg p-3">
-                <p className="text-xs text-slate-500">Pelapor</p>
+                <p className="text-xs text-slate-700">Pelapor</p>
                 <p className="text-sm font-medium text-slate-800">{insiden.pelapor}</p>
               </div>
               <div className="col-span-1 sm:col-span-2 bg-gray-50 rounded-lg p-3">
-                <p className="text-xs text-slate-500">Waktu Lapor</p>
+                <p className="text-xs text-slate-700">Waktu Lapor</p>
                 <p className="text-sm font-medium text-slate-800">{insiden.tanggal}</p>
               </div>
             </div>

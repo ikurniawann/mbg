@@ -25,17 +25,17 @@ export default function FeedbackPage() {
       <header className="flex items-center justify-between mb-6">
         <div>
           <h1 className="text-2xl font-bold text-slate-800">Feedback Kepuasan Penerima</h1>
-          <p className="text-sm text-slate-500 mt-1">Rating dan komentar dari lokasi distribusi</p>
+          <p className="text-sm text-slate-700 mt-1">Rating dan komentar dari lokasi distribusi</p>
         </div>
       </header>
 
       {/* Rating Summary Cards */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-200 text-center">
-          <p className="text-sm text-slate-500 mb-2">Rating Keseluruhan</p>
+          <p className="text-sm text-slate-700 mb-2">Rating Keseluruhan</p>
           <div className="flex items-center justify-center gap-1 text-amber-500 mb-1">
             {Array.from({ length: 5 }).map((_, i) => (
-              <span key={i} className={i < Math.round(parseFloat(overallAvg)) ? 'text-amber-400' : 'text-gray-300'}>
+              <span key={i} className={i < Math.round(parseFloat(overallAvg)) ? 'text-amber-400' : 'text-gray-600'}>
                 ★
               </span>
             ))}
@@ -95,11 +95,11 @@ export default function FeedbackPage() {
               <div className="flex items-start justify-between mb-4">
                 <div>
                   <h3 className="font-bold text-lg text-slate-800">{fb.lokasi}</h3>
-                  <p className="text-sm text-slate-500">📅 {fb.tanggal}</p>
+                  <p className="text-sm text-slate-700">📅 {fb.tanggal}</p>
                 </div>
                 <div className="flex items-center gap-1 text-amber-500">
                   {Array.from({ length: 5 }).map((_, i) => (
-                    <span key={i} className={i < Math.round(avg) ? 'text-amber-400' : 'text-gray-300'}>
+                    <span key={i} className={i < Math.round(avg) ? 'text-amber-400' : 'text-gray-600'}>
                       ★
                     </span>
                   ))}

@@ -21,7 +21,7 @@ export default function KeuanganPage() {
       <header className="flex items-center justify-between mb-6">
         <div>
           <h1 className="text-2xl font-bold text-slate-800">Ringkasan Keuangan</h1>
-          <p className="text-sm text-slate-500 mt-1">
+          <p className="text-sm text-slate-700 mt-1">
             Laporan keuangan bulan {MONTH_NAMES[lpj.bulan]} {lpj.tahun} — Program Makan Bergizi Gratis
           </p>
         </div>
@@ -70,7 +70,7 @@ export default function KeuanganPage() {
       </div>
 
       {/* Breakdown */}
-      <div className="grid grid-cols-2 gap-6 mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
         {/* Pie Chart Representation */}
         <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
           <h2 className="font-semibold text-slate-800 mb-4">📊 Proporsi Sumber Dana</h2>
@@ -91,14 +91,14 @@ export default function KeuanganPage() {
                 <div className="w-4 h-4 rounded bg-violet-600" />
                 <div>
                   <p className="text-sm font-semibold text-slate-700">Bantuan MBG (APBN)</p>
-                  <p className="text-xs text-slate-500">{bantuanPct.toFixed(1)}% dari total</p>
+                  <p className="text-xs text-slate-700">{bantuanPct.toFixed(1)}% dari total</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-4 h-4 rounded bg-blue-600" />
                 <div>
                   <p className="text-sm font-semibold text-slate-700">Mandiri</p>
-                  <p className="text-xs text-slate-500">{mandiriPct.toFixed(1)}% dari total</p>
+                  <p className="text-xs text-slate-700">{mandiriPct.toFixed(1)}% dari total</p>
                 </div>
               </div>
             </div>
@@ -160,13 +160,13 @@ export default function KeuanganPage() {
         <h2 className="font-semibold text-slate-800 mb-4">🍽️ Analisis Cost per Porsi</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="text-center p-4 bg-gray-50 rounded-xl border border-gray-200">
-            <p className="text-xs text-slate-500 font-medium mb-2">Total Porsi</p>
+            <p className="text-xs text-slate-700 font-medium mb-2">Total Porsi</p>
             <p className="text-2xl font-black text-slate-700">
               {lpj.ringkasan.totalPorsi.toLocaleString('id-ID')}
             </p>
           </div>
           <div className="text-center p-4 bg-gray-50 rounded-xl border border-gray-200">
-            <p className="text-xs text-slate-500 font-medium mb-2">Total Biaya</p>
+            <p className="text-xs text-slate-700 font-medium mb-2">Total Biaya</p>
             <p className="text-2xl font-black text-slate-700">
               Rp{(lpj.keuangan.total / 1000).toFixed(0)}rb
             </p>

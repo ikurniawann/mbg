@@ -108,7 +108,7 @@ export default function MenuMingguanPage() {
       <header className="flex items-center justify-between mb-6">
         <div>
           <h1 className="text-2xl font-bold text-slate-800">Menu Mingguan</h1>
-          <p className="text-sm text-slate-500">Periode: 14 — 18 April 2026</p>
+          <p className="text-sm text-slate-700">Periode: 14 — 18 April 2026</p>
         </div>
         <div className="flex gap-3">
           <button
@@ -134,22 +134,22 @@ export default function MenuMingguanPage() {
 
       {/* Gizi Summary Bar */}
       <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-200 mb-6">
-        <p className="text-xs text-slate-500 mb-3 font-medium uppercase tracking-wide">Total Gizi Minggu Ini</p>
+        <p className="text-xs text-slate-700 mb-3 font-medium uppercase tracking-wide">Total Gizi Minggu Ini</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <div>
-            <p className="text-xs text-slate-500">Karbohidrat</p>
+            <p className="text-xs text-slate-700">Karbohidrat</p>
             <p className="text-xl font-bold text-amber-600">{gizi.karbo}g</p>
           </div>
           <div>
-            <p className="text-xs text-slate-500">Protein</p>
+            <p className="text-xs text-slate-700">Protein</p>
             <p className="text-xl font-bold text-red-600">{gizi.protein}g</p>
           </div>
           <div>
-            <p className="text-xs text-slate-500">Lemak</p>
+            <p className="text-xs text-slate-700">Lemak</p>
             <p className="text-xl font-bold text-blue-600">{gizi.lemak}g</p>
           </div>
           <div>
-            <p className="text-xs text-slate-500">Rata-rata/Porsi</p>
+            <p className="text-xs text-slate-700">Rata-rata/Porsi</p>
             <p className="text-xl font-bold text-emerald-600">
               {Math.round(gizi.karbo / Math.max(Object.values(menuSlots).filter(m => m.menuId).length, 1))}g
             </p>
@@ -158,7 +158,7 @@ export default function MenuMingguanPage() {
       </div>
 
       {/* Weekly Menu Grid */}
-      <div className="grid grid-cols-5 gap-4 mb-6">
+      <div className="grid grid-cols-2 sm:grid-cols-5 gap-4 mb-6">
         {weekDates.map((date, idx) => {
           const slot = menuSlots[date];
           const isToday = date === '2026-04-17';
@@ -174,7 +174,7 @@ export default function MenuMingguanPage() {
             >
               {/* Day Header */}
               <div className={`px-4 py-2 border-b ${isToday ? 'bg-blue-500 text-white' : 'bg-slate-100'}`}>
-                <p className={`text-xs font-semibold ${isToday ? 'text-blue-100' : 'text-slate-500'}`}>
+                <p className={`text-xs font-semibold ${isToday ? 'text-blue-100' : 'text-slate-700'}`}>
                   {HARI[idx]}
                 </p>
                 <p className={`text-lg font-bold ${isToday ? 'text-white' : 'text-slate-800'}`}>
@@ -190,11 +190,11 @@ export default function MenuMingguanPage() {
                       {slot.menuName}
                     </p>
                     {src && (
-                      <p className="text-xs text-slate-500 mt-1">{src.porsi} porsi</p>
+                      <p className="text-xs text-slate-700 mt-1">{src.porsi} porsi</p>
                     )}
                     {/* Gizi Mini */}
                     {src && (
-                      <div className="mt-2 grid grid-cols-3 gap-1">
+                      <div className="mt-2 grid grid-cols-1 sm:grid-cols-3 gap-1">
                         <div className="text-center bg-amber-50 rounded p-1">
                           <p className="text-[10px] text-amber-600">Karbo</p>
                           <p className="text-xs font-bold text-amber-700">{src.nutrisi.karbohidrat}g</p>
@@ -241,7 +241,7 @@ export default function MenuMingguanPage() {
                 ) : (
                   <div className="text-center py-6">
                     <p className="text-2xl mb-1">🍽️</p>
-                    <p className="text-xs text-slate-400">Belum ada menu</p>
+                    <p className="text-xs text-slate-600">Belum ada menu</p>
                     {editMode && (
                       <select
                         className="mt-2 w-full text-xs border border-gray-300 rounded px-1 py-1"
@@ -280,7 +280,7 @@ export default function MenuMingguanPage() {
       {/* Available Menu Options */}
       <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
         <h2 className="font-semibold text-slate-800 mb-4">Pilihan Menu</h2>
-        <div className="grid grid-cols-5 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
           {dummyMenuOptions.map(menu => {
             const src = dummySRC.find(s => s.menuId === menu.id) || dummySRC[0];
             const hasAlergen = src?.alergen && src.alergen.length > 0;
@@ -295,7 +295,7 @@ export default function MenuMingguanPage() {
                 onClick={() => !editMode && alert('Klik "EDIT MENU" untuk menambahkan menu ke slot hari tertentu')}
               >
                 <p className="text-sm font-semibold text-slate-800">{menu.nama}</p>
-                <p className="text-xs text-slate-500 mt-1">{src?.porsi || 500} porsi</p>
+                <p className="text-xs text-slate-700 mt-1">{src?.porsi || 500} porsi</p>
                 {src?.alergen && src.alergen.length > 0 ? (
                   <div className="mt-2 flex flex-wrap gap-1">
                     {src.alergen.map(a => (
@@ -314,7 +314,7 @@ export default function MenuMingguanPage() {
 
         {/* Alergen Legend */}
         <div className="mt-4 pt-4 border-t border-gray-100">
-          <p className="text-xs text-slate-500 mb-2">Legend Alergen:</p>
+          <p className="text-xs text-slate-700 mb-2">Legend Alergen:</p>
           <div className="flex gap-4 flex-wrap">
             {ALOGEN_LIST.map(a => (
               <span key={a} className="text-xs bg-red-50 text-red-600 px-2 py-1 rounded border border-red-200">
