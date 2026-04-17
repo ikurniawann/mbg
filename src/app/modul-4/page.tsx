@@ -26,7 +26,12 @@ export default function Modul4Dashboard() {
       <header className="flex items-center justify-between mb-6">
         <div>
           <h1 className="text-2xl font-bold text-slate-800">Dashboard Food Safety & HACCP</h1>
-          <p className="text-sm text-slate-500">Selasa, 17 April 2026</p>
+          <div className="flex items-center gap-3 mt-1">
+            <p className="text-sm text-slate-500">Selasa, 17 April 2026</p>
+            <span className="px-2 py-0.5 bg-red-100 text-red-700 rounded text-xs font-medium border border-red-300">
+              🇮🇩 SK BGN No. 244/2025 & 63421/2026
+            </span>
+          </div>
         </div>
         <div className="flex gap-3">
           <Link href="/modul-4/suhu" className="px-4 py-2 bg-red-600 text-white rounded-lg text-sm font-medium hover:bg-red-700 transition">
@@ -188,6 +193,13 @@ export default function Modul4Dashboard() {
               <div>
                 <p className="font-semibold text-slate-800">Tindakan Korektif</p>
                 <p className="text-xs text-slate-500">Log & tracking masalah</p>
+              </div>
+            </Link>
+            <Link href="/modul-4/km" className="flex items-center gap-3 p-4 bg-red-50 rounded-xl hover:bg-red-100 transition">
+              <span className="text-2xl">🚨</span>
+              <div>
+                <p className="font-semibold text-slate-800">Kejadian Menonjol (KM)</p>
+                <p className="text-xs text-slate-500">Lapor & tracking KM — wajib 12 jam</p>
               </div>
             </Link>
           </div>

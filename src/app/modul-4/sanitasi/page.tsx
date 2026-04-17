@@ -82,7 +82,12 @@ export default function SanitasiPage() {
       <header className="flex items-center justify-between mb-6">
         <div>
           <h1 className="text-2xl font-bold text-slate-800">Checklist Sanitasi</h1>
-          <p className="text-sm text-slate-500">Harian · Mingguan · Bulanan</p>
+          <div className="flex items-center gap-3 mt-1">
+            <p className="text-sm text-slate-500">Harian · Mingguan · Bulanan</p>
+            <span className="px-2 py-0.5 bg-red-100 text-red-700 rounded text-xs font-medium border border-red-300">
+              🇮🇩 SK BGN No. 244/2025 & 63421/2026
+            </span>
+          </div>
         </div>
         {submitted && (
           <div className="bg-emerald-50 border border-emerald-300 rounded-xl px-4 py-2 text-sm text-emerald-700">

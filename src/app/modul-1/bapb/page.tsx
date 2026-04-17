@@ -218,16 +218,21 @@ export default function BAPBPage() {
     <div className="p-6">
       <header className="mb-6">
         <h1 className="text-2xl font-bold text-slate-800">Form BAPB Digital</h1>
-        <p className="text-sm text-slate-500">
-          No. BAPB: <span className="font-mono font-semibold text-blue-600">{bapbNumber}</span>
-        </p>
+        <div className="flex items-center gap-3 mt-1">
+          <p className="text-sm text-slate-500">
+            No. BAPB: <span className="font-mono font-semibold text-blue-600">{bapbNumber}</span>
+          </p>
+          <span className="px-2 py-0.5 bg-red-100 text-red-700 rounded text-xs font-medium border border-red-300">
+            🇮🇩 SK BGN No. 244/2025 & 63421/2026
+          </span>
+        </div>
       </header>
 
       <form onSubmit={handleSubmit} className="max-w-5xl space-y-6">
         {/* Header Info */}
         <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
           <h2 className="font-semibold text-slate-800 mb-4">Informasi BAPB</h2>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-3 gap-4">
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-1">Tanggal</label>
               <input
@@ -247,6 +252,19 @@ export default function BAPBPage() {
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
                 required
               />
+            </div>
+            {/* SK Reference Dropdown */}
+            <div>
+              <label className="block text-sm font-medium text-slate-700 mb-1">Referensi SK</label>
+              <select
+                value={jenis}
+                onChange={e => setJenis(e.target.value as JenisBahan)}
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              >
+                <option value="Bantuan MBG">SK 244/2025 — Bantuan MBG</option>
+                <option value="Mandiri">SK 63421/2026 — Mandiri</option>
+              </select>
+              <p className="text-xs text-slate-400 mt-1">Pilih dasar hukum penerimaan</p>
             </div>
           </div>
         </div>

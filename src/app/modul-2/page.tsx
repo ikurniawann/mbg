@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { dummyMenuHarian, dummyMenuMingguan, dummySRC } from '@/lib/dummy-data';
 import { format } from 'date-fns';
+import { useState } from 'react';
 
 const ALOGEN_LIST = ['Susu', 'Telur', 'Kacang', 'Gluten', 'Kedelai', 'Seafood', 'Wijen'];
 
@@ -14,17 +15,30 @@ const dummyAlergenMenu = {
   'Telur Balado + Tahu Tempe': ['Kedelai'],
 };
 
+// Menu Kelompok 3B (Ibu Hamil, Ibu Menyusui, Balita) — SK 244
+const KELOMPOK_3B = [
+  { id: '3b1', label: 'Ibu Hamil', icon: '🤰', color: 'bg-pink-100 border-pink-300', textColor: 'text-pink-700' },
+  { id: '3b2', label: 'Ibu Menyusui', icon: '🤱', color: 'bg-purple-100 border-purple-300', textColor: 'text-purple-700' },
+  { id: '3b3', label: 'Balita', icon: '👶', color: 'bg-orange-100 border-orange-300', textColor: 'text-orange-700' },
+];
+
 export default function Modul2Dashboard() {
+  const [activeTab, setActiveTab] = useState<'reguler' | '3b'>('reguler');
   const menuToday = dummyMenuHarian.find(m => m.tanggal === '2026-04-17');
   const srcToday = menuToday?.src;
 
   return (
     <div className="p-6">
       {/* Header */}
-      <header className="flex items-center justify-between mb-6">
+      <header className="flex items-center justify-between mb-4">
         <div>
           <h1 className="text-2xl font-bold text-slate-800">Dashboard Menu & Gizi</h1>
-          <p className="text-sm text-slate-500">Minggu ke-16 · April 2026</p>
+          <div className="flex items-center gap-3 mt-1">
+            <p className="text-sm text-slate-500">Minggu ke-16 · April 2026</p>
+            <span className="px-2 py-0.5 bg-red-100 text-red-700 rounded text-xs font-medium border border-red-300">
+              🇮🇩 SK BGN No. 244/2025 & 63421/2026
+            </span>
+          </div>
         </div>
         <div className="flex gap-3">
           <Link
@@ -41,6 +55,92 @@ export default function Modul2Dashboard() {
           </Link>
         </div>
       </header>
+
+      {/* Tab Selector: Reguler vs 3B */}
+      <div className="bg-white rounded-xl p-1 shadow-sm border border-gray-200 mb-4 inline-flex">
+        <button
+          onClick={() => setActiveTab('reguler')}
+          className={`px-4 py-2 rounded-lg text-sm font-medium transition ${
+            activeTab === 'reguler' ? 'bg-emerald-600 text-white' : 'text-slate-600 hover:bg-gray-100'
+          }`}
+        >
+          🍱 Menu Reguler
+        </button>
+        <button
+          onClick={() => setActiveTab('3b')}
+          className={`px-4 py-2 rounded-lg text-sm font-medium transition flex items-center gap-1.5 ${
+            activeTab === '3b' ? 'bg-emerald-600 text-white' : 'text-slate-600 hover:bg-gray-100'
+          }`}
+        >
+          🤰 Menu Kelompok 3B
+          <span className={`text-[10px] px-1.5 py-0.5 rounded ${activeTab === '3b' ? 'bg-white/20 text-white' : 'bg-pink-100 text-pink-600'}`}>SK 244</span>
+        </button>
+      </div>
+
+      {/* Distribution Days Info (SK 244) */}
+      <div className="bg-gradient-to-r from-blue-50 to-emerald-50 border border-blue-200 rounded-xl p-3 mb-4 flex items-center gap-4">
+        <div className="flex items-center gap-2">
+          <span className="text-lg">📅</span>
+          <div>
+            <p className="text-xs text-slate-500">Hari Distribusi Efektif per Tahun</p>
+            <div className="flex items-center gap-3 mt-0.5">
+              <span className="text-sm font-bold text-slate-700">Reguler: <span className="text-blue-600">264 hari</span></span>
+              <span className="text-slate-300">|</span>
+              <span className="text-sm font-bold text-slate-700">Kelompok 3B: <span className="text-emerald-600">288 hari</span></span>
+            </div>
+          </div>
+        </div>
+        <div className="ml-auto flex items-center gap-2">
+          <span className="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded border border-blue-200">Radius SPPG max 6km</span>
+          <span className="text-xs bg-pink-100 text-pink-600 px-2 py-1 rounded border border-pink-200">Adaptasi 3B</span>
+        </div>
+      </div>
+
+      {/* 3B Group Selection Panel */}
+      {activeTab === '3b' && (
+        <div className="bg-white rounded-xl p-6 shadow-sm border border-pink-200 mb-6">
+          <div className="flex items-center justify-between mb-4">
+            <div>
+              <h2 className="font-bold text-lg text-slate-800">🎯 Menu Adaptasi Kelompok 3B</h2>
+              <p className="text-sm text-slate-500 mt-0.5">Berdasarkan SK 244 — Radius SPPG max 6km</p>
+            </div>
+            <span className="text-xs bg-pink-100 text-pink-700 px-3 py-1 rounded-full font-medium border border-pink-300">
+              🤰 Ibu Hamil · 🤱 Ibu Menyusui · 👶 Balita
+            </span>
+          </div>
+
+          {/* 3B Group Cards */}
+          <div className="grid grid-cols-3 gap-4 mb-4">
+            {KELOMPOK_3B.map(group => (
+              <div key={group.id} className={`rounded-xl p-4 border-2 ${group.color} ${group.textColor}`}>
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-2xl">{group.icon}</span>
+                  <p className="font-bold">{group.label}</p>
+                </div>
+                <div className="space-y-1">
+                  <p className="text-xs opacity-70">Kalori: 450-500 kkal</p>
+                  <p className="text-xs opacity-70">Protein: 18-20g</p>
+                  <p className="text-xs opacity-70">Zat Besi: 27mg (Ibu Hamil)</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* 3B Menu Grid */}
+          <div className="grid grid-cols-3 gap-3">
+            {['Menu 3B-Ibu Hamil A', 'Menu 3B-Ibu Menyusui B', 'Menu 3B-Balita C'].map((menu, idx) => (
+              <div key={idx} className="border border-pink-200 rounded-xl p-3 bg-pink-50 hover:bg-pink-100 transition cursor-pointer">
+                <p className="text-sm font-semibold text-slate-800">{menu}</p>
+                <p className="text-xs text-slate-500 mt-1">500 porsi · 3 variant</p>
+                <div className="flex items-center gap-1 mt-2">
+                  <span className="text-[10px] bg-pink-200 text-pink-700 px-1.5 py-0.5 rounded">SK 244</span>
+                  <span className="text-[10px] bg-emerald-200 text-emerald-700 px-1.5 py-0.5 rounded">✓ Disetujui</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Approval Workflow Tracker */}
       <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 mb-6">

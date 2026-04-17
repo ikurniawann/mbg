@@ -173,6 +173,27 @@ export interface QCProduksi {
   qcAt: string;
 }
 
+// ---------- MODUL 3: HEALTH CHECK ----------
+
+export interface HealthCheckEntry {
+  id: string;
+  tanggal: string;
+  nama: string;
+  posisi: string;
+  suhuTubuh: number; // °C
+  kondisi: 'Sehat' | 'Tidak Sehat';
+  gejala?: string[];
+  apd: {
+    masker: boolean;
+    sarungTangan: boolean;
+    celemek: boolean;
+    topi: boolean;
+  };
+  keterangan?: string;
+  isAbsent?: boolean; // cuti/sakit
+  signedAt?: string;
+}
+
 // ---------- MODUL 4: FOOD SAFETY & HACCP ----------
 
 export interface MonitoringSuhu {
@@ -208,6 +229,37 @@ export interface TindakanKorektif {
   tindakan: string;
   status: 'Open' | 'In Progress' | 'Closed';
   closedAt?: string;
+}
+
+// ---------- MODUL 4: KEJADIAN MENONJOL (KM) ----------
+
+export type JenisKM =
+  | 'Gangguan Pencernaan'
+  | 'Alergi/Reaksi Makanan'
+  | 'Keracunan Makanan'
+  | 'Gangguan Lain';
+
+export type SeverityKM = 'Kritis' | 'Mayor' | 'Minor';
+
+export type StatusKM = 'Open' | 'Investigasi' | 'Closed';
+
+export interface KejadianMenonjol {
+  id: string;
+  tanggalKejadian: string;
+  tanggalLapor: string;
+  lokasi: string;
+  kelompok: 'Reguler' | 'Ibu Hamil' | 'Ibu Menyusui' | 'Balita';
+  jenis: JenisKM;
+  jumlahDampak: number;
+  severity: SeverityKM;
+  deskripsi: string;
+  kronologi: string;
+  tindakanSegera: string;
+  status: StatusKM;
+  closedAt?: string;
+  pelapor: string;
+  notifiedKe: string[]; // BGN, Dinsan, dll
+  followUp?: string;
 }
 
 // ---------- MODUL 5: DISTRIBUSI & LOGISTIK ----------

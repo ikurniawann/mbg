@@ -5,9 +5,10 @@ import Link from 'next/link';
 import { dummyProduksiHarian, dummyBahan } from '@/lib/dummy-data';
 import type { Shift } from '@/lib/types';
 
-const SHIFTS: Shift[] = ['Persiapan', 'Pengolahan', 'Pemorsian', 'Packing', 'Kebersihan'];
+const SHIFTS: Shift[] = ['Penerimaan Bahan', 'Persiapan', 'Pengolahan', 'Pemorsian', 'Packing', 'Kebersihan'];
 
 const PROGRESS_MAP: Record<string, number> = {
+  'Penerimaan Bahan': 100,
   'Persiapan': 100,
   'Pengolahan': 85,
   'Pemorsian': 68,
@@ -39,7 +40,12 @@ export default function Modul3Dashboard() {
       <header className="flex items-center justify-between mb-6">
         <div>
           <h1 className="text-2xl font-bold text-slate-800">Dashboard Produksi Dapur</h1>
-          <p className="text-sm text-slate-500">Selasa, 17 April 2026 · Menu: Ikan Goreng + Capcay</p>
+          <div className="flex items-center gap-3 mt-1">
+            <p className="text-sm text-slate-500">Selasa, 17 April 2026 · Menu: Ikan Goreng + Capcay</p>
+            <span className="px-2 py-0.5 bg-red-100 text-red-700 rounded text-xs font-medium border border-red-300">
+              🇮🇩 SK BGN No. 244/2025 & 63421/2026
+            </span>
+          </div>
         </div>
         <div className="flex gap-3">
           <Link href="/modul-3/timer" className="px-4 py-2 bg-orange-600 text-white rounded-lg text-sm font-medium hover:bg-orange-700 transition">
@@ -47,6 +53,9 @@ export default function Modul3Dashboard() {
           </Link>
           <Link href="/modul-3/dokumentasi" className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition">
             📷 Dokumentasi
+          </Link>
+          <Link href="/modul-3/health-check" className="px-4 py-2 bg-red-600 text-white rounded-lg text-sm font-medium hover:bg-red-700 transition">
+            🩺 Health Check
           </Link>
         </div>
       </header>
@@ -181,7 +190,12 @@ export default function Modul3Dashboard() {
 
         {/* Health Check */}
         <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
-          <h2 className="font-semibold text-slate-800 mb-4">Health Check Staf Harian</h2>
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="font-semibold text-slate-800">Health Check Staf Harian</h2>
+            <Link href="/modul-3/health-check" className="text-xs text-blue-600 hover:underline font-medium">
+              Halaman Lengkap →
+            </Link>
+          </div>
           <div className="space-y-3">
             {healthChecks.map((staf, idx) => (
               <div
@@ -229,19 +243,54 @@ export default function Modul3Dashboard() {
 
       {/* Bahan Terpakai */}
       <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 mb-6">
-        <h2 className="font-semibold text-slate-800 mb-4">Bahan Terpakai Hari Ini</h2>
-        <div className="grid grid-cols-3 gap-3">
-          {produksi.bahanTerpakai.map((bahan, idx) => (
-            <div key={idx} className="flex items-center justify-between p-3 bg-slate-50 rounded-xl">
-              <div>
-                <p className="font-semibold text-slate-800">{bahan.nama}</p>
-                <p className="text-xs text-slate-400">dari stok inventori</p>
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="font-semibold text-slate-800">Bahan Terpakai Hari Ini</h2>
+          <span className="text-xs bg-purple-100 text-purple-700 px-3 py-1 rounded-full font-medium border border-purple-200">
+            SK 244/2025 & SK 63421/2026
+          </span>
+        </div>
+        <div className="grid grid-cols-1 gap-3">
+          {produksi.bahanTerpakai.map((bahan, idx) => {
+            const isBantuanMBG = bahan.nama.includes('Ikan') || bahan.nama.includes('Beras');
+            return (
+              <div key={idx} className="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-gray-100">
+                <div className="flex items-center gap-3">
+                  <span className={`w-2 h-10 rounded-full ${isBantuanMBG ? 'bg-blue-400' : 'bg-emerald-400'}`} />
+                  <div>
+                    <p className="font-semibold text-slate-800">{bahan.nama}</p>
+                    <div className="flex items-center gap-2 mt-0.5">
+                      <span className={`text-[10px] px-1.5 py-0.5 rounded font-medium ${
+                        isBantuanMBG ? 'bg-blue-100 text-blue-700' : 'bg-emerald-100 text-emerald-700'
+                      }`}>
+                        {isBantuanMBG ? '🔵 Bantuan MBG' : '🟢 Mandiri'}
+                      </span>
+                      <span className="text-[10px] text-slate-400">dari stok inventori</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="text-right">
+                  <p className="font-bold text-purple-600">{bahan.jumlah} {bahan.satuan}</p>
+                  <p className="text-[10px] text-slate-400">
+                    {isBantuanMBG ? 'Ref: SK 244/2025' : 'Ref: SK 63421/2026'}
+                  </p>
+                </div>
               </div>
-              <div className="text-right">
-                <p className="font-bold text-purple-600">{bahan.jumlah} {bahan.satuan}</p>
-              </div>
-            </div>
-          ))}
+            );
+          })}
+        </div>
+        {/* Summary */}
+        <div className="mt-4 pt-4 border-t border-gray-100 flex items-center gap-4">
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 rounded-full bg-blue-400" />
+            <span className="text-xs text-slate-600">Bantuan MBG</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 rounded-full bg-emerald-400" />
+            <span className="text-xs text-slate-600">Mandiri</span>
+          </div>
+          <span className="ml-auto text-xs text-slate-500">
+            Breakdown sesuai SK 244 & 63421
+          </span>
         </div>
       </div>
 

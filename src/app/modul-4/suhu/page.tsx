@@ -175,7 +175,12 @@ export default function SuhuPage() {
     <div className="p-6">
       <header className="mb-6">
         <h1 className="text-2xl font-bold text-slate-800">Monitoring Suhu CCP</h1>
-        <p className="text-sm text-slate-500">Tanggal: {today}</p>
+        <div className="flex items-center gap-3 mt-1">
+          <p className="text-sm text-slate-500">Tanggal: {today}</p>
+          <span className="px-2 py-0.5 bg-red-100 text-red-700 rounded text-xs font-medium border border-red-300">
+            🇮🇩 SK BGN No. 244/2025 & 63421/2026
+          </span>
+        </div>
       </header>
 
       {/* CCP Form */}
